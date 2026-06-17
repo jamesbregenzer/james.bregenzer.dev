@@ -1,10 +1,56 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Projects — James Bregenzer</title><link rel="stylesheet" href="/assets/styles.css"></head><body>
-<header class="site-header"><a class="logo" href="/"><span class="logo-mark">JB</span><span>james.bregenzer.dev</span></a><nav class="nav"><a href="/projects/">Projects</a><a href="/activity/">Activity</a><a href="/now/">Now</a><a href="/uses/">Uses</a><a href="https://github.com/jamesbregenzer">GitHub</a></nav></header>
-<main><section class="page-hero"><p class="kicker">Projects</p><h1>Useful tools, experiments, and systems.</h1><p class="hero-copy">A mix of live tools, planned projects, and experiments worth turning into something real.</p></section>
-<section class="section"><div class="grid projects-grid">
-<article class="card project-card"><div class="card-inner"><h3>WP Core Radar</h3><p>Contribution opportunity scoring and review workflow for WordPress Core.</p><div class="hero-actions"><a class="button primary" href="/project/radar/">Project page</a><a class="button" href="https://radar.james.bregenzer.dev">Live app</a></div></div></article>
-<article class="card project-card"><div class="card-inner"><h3>Contributor Quest</h3><p>Gamified contribution tracking and visible progress toward open-source goals.</p><div class="tag-list"><span class="tag">Planned</span></div></div></article>
-<article class="card project-card"><div class="card-inner"><h3>Status Radar</h3><p>Infrastructure health checks for uptime, DNS, SSL, security headers, and redirects.</p><div class="tag-list"><span class="tag">Planned</span></div></div></article>
-<article class="card project-card"><div class="card-inner"><h3>Darkrai</h3><p>Experimental Pokémon TCG tooling and collection/deck ideas.</p><div class="tag-list"><span class="tag">Experimental</span></div></div></article>
-</div></section></main><footer class="site-footer"><span>Projects are updated as they become real.</span><span><a href="mailto:james@bregenzer.dev">james@bregenzer.dev</a></span></footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — James Bregenzer</title>
+  <meta name="description" content="Project index for James Bregenzer: developer tools, experiments, and Cloudflare-hosted systems.">
+  <meta name="color-scheme" content="dark">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header" aria-label="Site header">
+  <a class="brand" href="/" aria-label="james.bregenzer.dev home">
+    <span class="brand-mark" aria-hidden="true"><span></span></span>
+    <span class="brand-copy"><strong>james.bregenzer.dev</strong><small>systems online</small></span>
+  </a>
+  <nav class="nav" aria-label="Primary navigation">
+    <a href="/projects/" aria-current="page">Projects</a>
+    <a href="/activity/">Activity</a>
+    <a href="/now/">Now</a>
+    <a href="/uses/">Uses</a>
+    <a href="https://github.com/jamesbregenzer">GitHub</a>
+  </nav>
+</header>
+    <main>
+  <section class="page-hero" aria-labelledby="projects-title">
+    <p class="eyebrow"><span class="pulse-dot"></span>Project index</p>
+    <h1 id="projects-title">Useful tools, experiments, and systems.</h1>
+    <p class="hero-copy">A curated inventory of live tools, planned builds, and experiments that are worth turning into something real.</p>
+  </section>
+  <section class="section">
+    <div class="project-board">
+      <article class="project-feature">
+        <p class="section-kicker">Featured / live</p>
+        <h2>WP Core Radar</h2>
+        <p>Contribution opportunity scoring and review workflow for WordPress Core. Built to reduce search time and increase useful testing, review, and comment activity.</p>
+        <div class="tag-cloud"><span>Cloudflare Worker</span><span>GitHub API</span><span>WordPress</span><span>Static data</span></div>
+        <div class="hero-actions"><a class="button button-primary" href="/project/radar/">Project page</a><a class="button" href="https://radar.james.bregenzer.dev">Live app</a></div>
+      </article>
+      <div class="project-list">
+        <article class="project-row building"><div class="project-icon">◒</div><div><h3>Developer Hub</h3><p>The site you are viewing now: part launchpad, part activity console, part workbench.</p></div><span class="status-pill">Building</span></article>
+        <article class="project-row planning"><div class="project-icon">✦</div><div><h3>Contributor Quest</h3><p>Gamified contribution tracking and visible progress toward open-source goals.</p></div><span class="status-pill">Planning</span></article>
+        <article class="project-row planning"><div class="project-icon">◌</div><div><h3>Status Radar</h3><p>Infrastructure health checks for uptime, DNS, SSL, headers, and redirects.</p></div><span class="status-pill">Planning</span></article>
+        <article class="project-row idea"><div class="project-icon">◇</div><div><h3>Darkrai</h3><p>Experimental Pokémon TCG tooling, deck ideas, and collection experiments.</p></div><span class="status-pill">Idea</span></article>
+      </div>
+    </div>
+  </section>
+</main>
+    <footer class="site-footer">
+      <p>Built with static files, GitHub, and Cloudflare Pages.</p>
+      <p><a href="mailto:james@bregenzer.dev">james@bregenzer.dev</a></p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,12 +1,16 @@
 # james.bregenzer.dev
 
-Personal developer hub, project portfolio, experiments, and open source activity.
+Projects, experiments, and open source activity.
 
 Live site: https://james.bregenzer.dev
 
+## Direction
+
+This site is an operations center and public workshop: projects, activity, current focus, and useful systems.
+
 ## Structure
 
-- `/` — homepage / developer dashboard
+- `/` — home
 - `/projects/` — project index
 - `/project/radar/` — WP Core Radar project page
 - `/activity/` — recent activity feed
@@ -15,4 +19,4 @@ Live site: https://james.bregenzer.dev
 
 ## Deployment
 
-Static HTML/CSS hosted on Cloudflare Pages.
+Static HTML/CSS hosted on Cloudflare Pages. The live WP Core Radar app runs separately at https://radar.james.bregenzer.dev.
