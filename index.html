@@ -4,106 +4,265 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>james.bregenzer.dev — developer terminal</title>
-  <meta name="description" content="Developer operations center for James Bregenzer: projects, signals, activity, and experiments.">
+  <meta name="description" content="A developer terminal for James Bregenzer: signals, projects, activity, and experiments.">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-  <div class="main-shell">
-    <header class="topbar">
-      <div class="topbar-title">james.bregenzer.dev — developer terminal</div>
-      <div class="topbar-meta"><span>time: 10:42:30</span><span>|</span><span>date: 17 JUN 2025</span><span>|</span><span>uptime: 3d 4h 22m</span></div>
+  <div class="terminal-shell">
+    <header class="terminal-topbar" aria-label="Developer terminal status">
+      <a class="terminal-title" href="/">james.bregenzer.dev — developer terminal</a>
+      <div class="terminal-meta" aria-label="System metadata">
+        <span>time: 10:42:30</span>
+        <span>|</span>
+        <span>date: 17 JUN 2025</span>
+        <span>|</span>
+        <span>uptime: 3d 4h 22m</span>
+      </div>
     </header>
-    <div class="terminal-grid">
-      <aside class="sidebar">
-        <nav class="nav" aria-label="Primary navigation">
-          <a class="active" href="/">overview</a>
+
+    <div class="terminal-layout">
+      <aside class="terminal-sidebar" aria-label="Site navigation and status">
+        <nav class="terminal-nav" aria-label="Primary navigation">
+          <a class="is-active" href="/">overview</a>
           <a href="/projects/">projects</a>
           <a href="/activity/">activity</a>
           <a href="/now/">now</a>
           <a href="/uses/">uses</a>
           <a href="https://github.com/jamesbregenzer">github</a>
         </nav>
-        <div class="side-panel">-- system --<br><strong>status: online</strong><br><strong>all systems operational</strong></div>
-        <div class="side-panel">-- about --<br>Developer, builder, and problem solver turning signals into decisions.<br><br><span class="prompt">&gt; _</span></div>
-        <div></div>
-        <div class="side-icons"><a href="https://github.com/jamesbregenzer">●</a><a href="https://make.wordpress.org/">◉</a><a href="https://radar.james.bregenzer.dev">☁</a><a href="mailto:james@bregenzer.dev">✉</a><a href="/activity/">≋</a></div>
-        <footer class="side-footer">© 2025 James Bregenzer<br>built with ♥ and lots of caffeine.</footer>
-      </aside>
-      <main class="content">
-        <section class="home-layout">
-          <div class="mission">
-            <p class="section-title">overview.exe</p>
-            <h1>turning <span class="green">signals</span><br>into <span class="green">decisions</span>.</h1>
-            <p class="lede">I build tools, automate workflows, and contribute to the open web.</p>
-            <div class="actions"><a class="button" href="/projects/">view projects</a><a class="button" href="https://radar.james.bregenzer.dev">open radar</a></div>
-          </div>
-          <div class="signal-panel">
-            <p class="section-title">signal matrix</p>
-            <div class="signal-stage">
-              
-<svg class="demon" viewBox="0 0 260 180" aria-hidden="true">
-  <defs><filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <g filter="url(#glow)" shape-rendering="crispEdges">
-    <path fill="#1a0b2f" d="M82 56h20V36h20V22h16v24h14V22h16v14h20v20h20v18h18v28h-18v18h-20v-18h-18V88h-20v14h-20V88h-20v14H92v18H72v-18H54V74h18z"/>
-    <path fill="#32115b" d="M38 28h32v16h20v18H70V50H54v24H38V58H22V42h16zm184 0h-32v16h-20v18h20V50h16v24h16V58h16V42h-16z"/>
-    <path fill="#4b1f80" d="M94 70h72v54H94z"/>
-    <path fill="#0b050f" d="M108 92h16v12h-16zm28 0h16v12h-16zm-18 26h24v10h-24z"/>
-    <path fill="#7dff6a" d="M106 82h18v8h-18zm30 0h18v8h-18z"/>
-    <path fill="#b9ffad" d="M112 82h6v4h-6zm30 0h6v4h-6z"/>
-    <path fill="#140923" d="M68 124h28v16H68zm96 0h28v16h-28z"/>
-    <path fill="#2b1048" d="M42 94h20v18H42zm156 0h20v18h-20z"/>
-  </g>
-</svg>
 
-              <div class="radar-rings"></div>
-              <i class="signal-line line-github"></i><i class="signal-line line-wp"></i><i class="signal-line line-radar"></i><i class="signal-line line-cf"></i><i class="signal-line line-personal"></i>
-              <i class="signal-dot sig-github"></i><i class="signal-dot sig-wp"></i><i class="signal-dot sig-radar"></i><i class="signal-dot sig-cf"></i><i class="signal-dot sig-personal"></i>
-              <div class="signal-label label-github">GitHub <span>recent activity</span></div>
-              <div class="signal-label label-wp">WordPress Core <span>contributions</span></div>
-              <div class="signal-label label-radar">Radar <span>ticket intelligence</span></div>
-              <div class="signal-label label-cf">Cloudflare <span>edge &amp; CDN</span></div>
-              <div class="signal-label label-personal">Personal Projects <span>active builds</span></div>
+        <section class="sidebar-module">
+          <h2>-- system --</h2>
+          <p><strong>status: online</strong></p>
+          <p><strong>all systems operational</strong></p>
+        </section>
+
+        <section class="sidebar-module">
+          <h2>-- about --</h2>
+          <p>Developer, builder, and problem solver turning signals into decisions.</p>
+          <p class="terminal-prompt">&gt; _</p>
+        </section>
+
+        <div class="sidebar-spacer" aria-hidden="true"></div>
+
+        <div class="sidebar-links" aria-label="Quick links">
+          <a href="https://github.com/jamesbregenzer" aria-label="GitHub">◖</a>
+          <a href="https://make.wordpress.org/" aria-label="WordPress">◉</a>
+          <a href="https://radar.james.bregenzer.dev" aria-label="Radar">◎</a>
+          <a href="mailto:james@bregenzer.dev" aria-label="Email">□</a>
+          <a href="/activity/" aria-label="Activity feed">≋</a>
+        </div>
+
+        <footer class="terminal-footer">
+          © 2025 James Bregenzer<br>
+          built with ♥ and lots<br>
+          of caffeine.
+        </footer>
+      </aside>
+
+      <main class="terminal-main">
+        <section class="hero-grid" aria-labelledby="overview-title">
+          <div class="mission-panel panel-cell">
+            <p class="panel-label">overview.exe</p>
+            <h1 id="overview-title">turning <span>signals</span><br>into <span>decisions</span>.</h1>
+            <p class="mission-copy">I build tools, automate workflows, and contribute to the open web.</p>
+            <div class="terminal-actions">
+              <a class="terminal-button" href="/projects/">view projects</a>
+              <a class="terminal-button" href="https://radar.james.bregenzer.dev">open radar</a>
+            </div>
+          </div>
+
+          <div class="signal-matrix panel-cell" aria-labelledby="signal-title">
+            <div class="matrix-head">
+              <p class="panel-label" id="signal-title">signal matrix</p>
+              <p>live connections</p>
+            </div>
+
+            <div class="matrix-stage" aria-hidden="true">
+              <svg class="matrix-creature" viewBox="0 0 520 230" role="img" aria-label="Pixel creature watching over the signal matrix">
+                <defs>
+                  <filter id="pixelGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="glow"></feGaussianBlur>
+                    <feMerge>
+                      <feMergeNode in="glow"></feMergeNode>
+                      <feMergeNode in="SourceGraphic"></feMergeNode>
+                    </feMerge>
+                  </filter>
+                </defs>
+                <g shape-rendering="crispEdges" filter="url(#pixelGlow)">
+                  <rect x="232" y="18" width="56" height="16" fill="#231135"></rect>
+                  <rect x="214" y="34" width="92" height="16" fill="#2f1648"></rect>
+                  <rect x="194" y="50" width="132" height="18" fill="#351a54"></rect>
+                  <rect x="180" y="68" width="160" height="22" fill="#432069"></rect>
+                  <rect x="166" y="90" width="188" height="22" fill="#33184f"></rect>
+                  <rect x="188" y="112" width="144" height="22" fill="#24113a"></rect>
+                  <rect x="214" y="134" width="92" height="34" fill="#160b24"></rect>
+
+                  <rect x="134" y="42" width="54" height="18" fill="#3d1d62"></rect>
+                  <rect x="110" y="24" width="32" height="18" fill="#2b1544"></rect>
+                  <rect x="84" y="12" width="32" height="18" fill="#1b0d2b"></rect>
+                  <rect x="74" y="46" width="50" height="16" fill="#27133f"></rect>
+                  <rect x="58" y="68" width="70" height="16" fill="#211138"></rect>
+                  <rect x="42" y="92" width="82" height="14" fill="#180c29"></rect>
+
+                  <rect x="332" y="42" width="54" height="18" fill="#3d1d62"></rect>
+                  <rect x="378" y="24" width="32" height="18" fill="#2b1544"></rect>
+                  <rect x="404" y="12" width="32" height="18" fill="#1b0d2b"></rect>
+                  <rect x="396" y="46" width="50" height="16" fill="#27133f"></rect>
+                  <rect x="392" y="68" width="70" height="16" fill="#211138"></rect>
+                  <rect x="396" y="92" width="82" height="14" fill="#180c29"></rect>
+
+                  <rect x="136" y="124" width="46" height="16" fill="#221137"></rect>
+                  <rect x="102" y="142" width="74" height="18" fill="#180d28"></rect>
+                  <rect x="74" y="164" width="92" height="14" fill="#120920"></rect>
+                  <rect x="338" y="124" width="46" height="16" fill="#221137"></rect>
+                  <rect x="344" y="142" width="74" height="18" fill="#180d28"></rect>
+                  <rect x="354" y="164" width="92" height="14" fill="#120920"></rect>
+
+                  <rect x="211" y="88" width="36" height="12" fill="#7dff68"></rect>
+                  <rect x="273" y="88" width="36" height="12" fill="#7dff68"></rect>
+                  <rect x="221" y="88" width="14" height="6" fill="#d4ffce"></rect>
+                  <rect x="283" y="88" width="14" height="6" fill="#d4ffce"></rect>
+                  <rect x="230" y="116" width="60" height="10" fill="#09050e"></rect>
+                  <rect x="238" y="126" width="12" height="16" fill="#09050e"></rect>
+                  <rect x="270" y="126" width="12" height="16" fill="#09050e"></rect>
+                  <rect x="256" y="145" width="8" height="10" fill="#7dff68"></rect>
+                  <rect x="248" y="158" width="24" height="8" fill="#09050e"></rect>
+                </g>
+              </svg>
+
+              <div class="matrix-stars"></div>
+              <div class="radar-base"></div>
+              <div class="radar-sweep"></div>
+
+              <span class="signal-node node-github"></span>
+              <span class="signal-node node-wp"></span>
+              <span class="signal-node node-radar"></span>
+              <span class="signal-node node-cf"></span>
+              <span class="signal-node node-personal"></span>
+
+              <span class="signal-wire wire-github"></span>
+              <span class="signal-wire wire-wp"></span>
+              <span class="signal-wire wire-radar"></span>
+              <span class="signal-wire wire-cf"></span>
+              <span class="signal-wire wire-personal"></span>
+
+              <div class="matrix-label label-github"><strong>GitHub</strong><span>recent activity</span></div>
+              <div class="matrix-label label-wp"><strong>WordPress Core</strong><span>contributions</span></div>
+              <div class="matrix-label label-radar"><strong>Radar</strong><span>ticket intelligence</span></div>
+              <div class="matrix-label label-cf"><strong>Cloudflare</strong><span>edge &amp; CDN</span></div>
+              <div class="matrix-label label-personal"><strong>Personal Projects</strong><span>active builds</span></div>
             </div>
           </div>
         </section>
-        <section class="metrics">
-          <h2 class="section-title">system metrics</h2>
-          <div class="metric-grid">
-            <article class="metric-card"><div><div class="metric-kicker">◉ GitHub Activity</div><div class="metric-value">87</div><p>contributions<br>this month</p></div><div class="bars green"><i style="height:10px"></i><i style="height:18px"></i><i style="height:12px"></i><i style="height:22px"></i><i style="height:9px"></i><i style="height:17px"></i><i style="height:13px"></i><i style="height:21px"></i><i style="height:11px"></i><i style="height:24px"></i><i style="height:16px"></i><i style="height:14px"></i><i style="height:20px"></i><i style="height:26px"></i><i style="height:18px"></i><i style="height:13px"></i><i style="height:22px"></i><i style="height:15px"></i><i style="height:29px"></i><i style="height:12px"></i></div></article>
-            <article class="metric-card"><div><div class="metric-kicker">◉ WordPress Core</div><div class="metric-value blue">24</div><p>patches / tickets<br>this month</p></div><div class="bars blue"><i style="height:7px"></i><i style="height:12px"></i><i style="height:19px"></i><i style="height:9px"></i><i style="height:24px"></i><i style="height:15px"></i><i style="height:12px"></i><i style="height:27px"></i><i style="height:11px"></i><i style="height:18px"></i><i style="height:16px"></i><i style="height:22px"></i><i style="height:12px"></i><i style="height:9px"></i><i style="height:21px"></i><i style="height:26px"></i><i style="height:15px"></i><i style="height:28px"></i><i style="height:11px"></i><i style="height:20px"></i></div></article>
-            <article class="metric-card"><div><div class="metric-kicker">◎ Radar</div><div class="metric-value orange">280</div><p>tickets<br>scored</p></div><div class="bars orange"><i style="height:8px"></i><i style="height:15px"></i><i style="height:11px"></i><i style="height:13px"></i><i style="height:20px"></i><i style="height:9px"></i><i style="height:12px"></i><i style="height:17px"></i><i style="height:24px"></i><i style="height:10px"></i><i style="height:14px"></i><i style="height:12px"></i><i style="height:19px"></i><i style="height:25px"></i><i style="height:11px"></i><i style="height:22px"></i><i style="height:15px"></i><i style="height:18px"></i><i style="height:9px"></i><i style="height:16px"></i></div></article>
-            <article class="metric-card"><div><div class="metric-kicker">☁ Cloudflare</div><div class="metric-value purple">4</div><p>properties<br>active</p></div><div class="bars purple"><i style="height:6px"></i><i style="height:10px"></i><i style="height:12px"></i><i style="height:22px"></i><i style="height:8px"></i><i style="height:13px"></i><i style="height:18px"></i><i style="height:9px"></i><i style="height:24px"></i><i style="height:16px"></i><i style="height:11px"></i><i style="height:21px"></i><i style="height:14px"></i><i style="height:10px"></i><i style="height:17px"></i><i style="height:27px"></i><i style="height:12px"></i><i style="height:19px"></i><i style="height:8px"></i><i style="height:15px"></i></div></article>
-            <article class="metric-card"><div><div class="metric-kicker">⌁ Uptime (30d)</div><div class="metric-value">100%</div><p>all systems<br>operational</p></div><div class="bars green"><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:18px"></i></div></article>
-            <article class="metric-card"><div><div class="metric-kicker">◎ Current Focus</div><div class="metric-value orange" style="font-size:34px">Radar</div><p>Improving ticket scoring accuracy and signal quality.</p></div><p class="purple">• deep work</p></article>
+
+        <section class="metrics-section" aria-labelledby="metrics-title">
+          <h2 class="panel-label" id="metrics-title">system metrics</h2>
+          <div class="metrics-grid">
+            <article class="metric-card metric-green">
+              <p class="metric-name">◉ GitHub Activity</p>
+              <p class="metric-value">87</p>
+              <p class="metric-detail">contributions<br>this month</p>
+              <div class="mini-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </article>
+            <article class="metric-card metric-blue">
+              <p class="metric-name">◉ WordPress Core</p>
+              <p class="metric-value">24</p>
+              <p class="metric-detail">patches / tickets<br>this month</p>
+              <div class="mini-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </article>
+            <article class="metric-card metric-orange">
+              <p class="metric-name">◎ Radar</p>
+              <p class="metric-value">280</p>
+              <p class="metric-detail">tickets<br>scored</p>
+              <div class="mini-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </article>
+            <article class="metric-card metric-purple">
+              <p class="metric-name">☁ Cloudflare</p>
+              <p class="metric-value">4</p>
+              <p class="metric-detail">properties<br>active</p>
+              <div class="mini-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </article>
+            <article class="metric-card metric-green">
+              <p class="metric-name">⌁ Uptime (30d)</p>
+              <p class="metric-value">100%</p>
+              <p class="metric-detail">all systems<br>operational</p>
+              <div class="mini-bars steady" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </article>
+            <article class="metric-card metric-focus">
+              <p class="metric-name">◎ Current Focus</p>
+              <p class="metric-value">Radar</p>
+              <p class="metric-detail">Improving ticket scoring accuracy and signal quality.</p>
+              <p class="focus-mode">• deep work</p>
+            </article>
           </div>
         </section>
-        <section class="workspace">
-          <div class="workbench">
-            <h2 class="section-title">workbench_queue</h2>
-            <div class="queue">
-              <a class="queue-row" href="/project/radar/"><span class="tag">[LIVE]</span><div><h3>WP Core Radar</h3><p>Contribution radar &amp; review workflow for WordPress Core tickets.</p></div><div><span class="mini-label">tickets reviewed</span>156 <div class="progress green"><span style="width:78%"></span></div></div><div><span class="mini-label">streak</span>21 days</div><div><span class="mini-label">repo</span>radar-wp ↗</div></a>
-              <a class="queue-row" href="/"><span class="tag build">[BUILD]</span><div><h3>Developer Hub</h3><p>Public dashboard &amp; project index.</p></div><div><span class="mini-label">progress</span>64% <div class="progress blue"><span style="width:64%"></span></div></div><div><span class="mini-label">eta</span>Jul 2025</div><div><span class="mini-label">repo</span>devhub ↗</div></a>
-              <a class="queue-row" href="/projects/"><span class="tag plan">[PLAN]</span><div><h3>Darkrai</h3><p>Experimental TCG tooling and strange side-project energy.</p></div><div><span class="mini-label">progress</span>15% <div class="progress purple"><span style="width:15%"></span></div></div><div><span class="mini-label">eta</span>TBD</div><div><span class="mini-label">repo</span>darkrai ↗</div></a>
+
+        <section class="operations-grid" aria-label="Workbench queue and activity log">
+          <div class="workbench panel-block">
+            <div class="block-head">
+              <h2 class="panel-label">workbench_queue</h2>
+              <p>all · live · building · planning</p>
             </div>
+            <div class="queue-list">
+              <a class="queue-row" href="/project/radar/">
+                <span class="queue-icon radar-icon">◎</span>
+                <span class="queue-status status-live">[LIVE]</span>
+                <span class="queue-main"><strong>WP Core Radar</strong><small>Contribution radar &amp; review workflow for WordPress Core tickets.</small></span>
+                <span class="queue-stat"><small>tickets reviewed</small>156 <b></b></span>
+                <span class="queue-stat"><small>streak</small>21 days</span>
+                <span class="queue-repo"><small>repo</small>radar-wp ↗</span>
+              </a>
+              <a class="queue-row" href="/">
+                <span class="queue-icon build-icon">&gt;_</span>
+                <span class="queue-status status-build">[BUILD]</span>
+                <span class="queue-main"><strong>Developer Hub</strong><small>Public dashboard &amp; project index.</small></span>
+                <span class="queue-stat"><small>progress</small>64% <b></b></span>
+                <span class="queue-stat"><small>eta</small>Jul 2025</span>
+                <span class="queue-repo"><small>repo</small>devhub ↗</span>
+              </a>
+              <a class="queue-row" href="/projects/">
+                <span class="queue-icon plan-icon">△</span>
+                <span class="queue-status status-plan">[PLAN]</span>
+                <span class="queue-main"><strong>Darkrai</strong><small>Experimental TCG tooling and strange side-project energy.</small></span>
+                <span class="queue-stat"><small>progress</small>15% <b></b></span>
+                <span class="queue-stat"><small>eta</small>TBD</span>
+                <span class="queue-repo"><small>repo</small>darkrai ↗</span>
+              </a>
+            </div>
+            <a class="module-link" href="/projects/">&gt; view all projects</a>
           </div>
-          <div class="activity-log">
-            <h2 class="section-title">activity_log <a style="float:right;color:var(--green);text-transform:none" href="/activity/">&gt; view full log</a></h2>
-            <div class="activity-list">
-              <div class="log-row"><span class="log-time">10:20:14</span><span class="log-icon green">◉</span><div><div class="log-title">Pushed to radar-wp</div><div class="log-sub">Improve signal weighting for recent ticket activity</div></div><span class="log-source">radar-wp ↗</span></div>
-              <div class="log-row"><span class="log-time">09:55:32</span><span class="log-icon blue">◉</span><div><div class="log-title">Reviewed 2 tickets in Core</div><div class="log-sub">Focus: Editor, Blocks</div></div><span class="log-source">wordpress ↗</span></div>
-              <div class="log-row"><span class="log-time">09:30:11</span><span class="log-icon orange">◎</span><div><div class="log-title">Radar daily sync complete</div><div class="log-sub">280 tickets scored • 12 new high priority</div></div><span class="log-source">radar ↗</span></div>
-              <div class="log-row"><span class="log-time">08:45:02</span><span class="log-icon purple">☁</span><div><div class="log-title">Cloudflare config updated</div><div class="log-sub">Cache rules • Security settings</div></div><span class="log-source">cloudflare ↗</span></div>
-              <div class="log-row"><span class="log-time">08:18:47</span><span class="log-icon green">&gt;_</span><div><div class="log-title">Developer Hub build</div><div class="log-sub">UI polish • activity filters</div></div><span class="log-source">devhub ↗</span></div>
+
+          <div class="activity-log panel-block">
+            <div class="block-head">
+              <h2 class="panel-label">activity_log</h2>
+              <a href="/activity/">&gt; view full log</a>
+            </div>
+            <div class="log-list">
+              <a class="log-row" href="https://radar.james.bregenzer.dev"><time>10:20:14</time><span class="log-github">◖</span><strong>Pushed to radar-wp</strong><small>Improve signal weighting for recent ticket activity</small><em>radar-wp ↗</em></a>
+              <a class="log-row" href="/activity/"><time>09:55:32</time><span class="log-wp">◉</span><strong>Reviewed 2 tickets in Core</strong><small>Focus: Editor, Blocks</small><em>wordpress ↗</em></a>
+              <a class="log-row" href="https://radar.james.bregenzer.dev"><time>09:30:11</time><span class="log-radar">◎</span><strong>Radar daily sync complete</strong><small>280 tickets scored • 12 new high priority</small><em>radar ↗</em></a>
+              <a class="log-row" href="/activity/"><time>08:45:02</time><span class="log-cf">☁</span><strong>Cloudflare config updated</strong><small>Cache rules • Security settings</small><em>cloudflare ↗</em></a>
+              <a class="log-row" href="/"><time>08:18:47</time><span class="log-term">&gt;_</span><strong>Developer Hub build</strong><small>UI polish • activity filters</small><em>devhub ↗</em></a>
             </div>
           </div>
         </section>
-        <section class="connected">
-          <a class="surface" href="https://github.com/jamesbregenzer"><strong>GitHub</strong><span>github.com/<br>jamesbregenzer<br>active</span></a>
-          <a class="surface" href="https://make.wordpress.org/"><strong>WordPress</strong><span>make.wordpress.org<br>core contributor</span></a>
-          <a class="surface" href="https://radar.james.bregenzer.dev"><strong>Radar</strong><span>radar.james.bregenzer.dev<br>ticket intelligence</span></a>
-          <a class="surface" href="https://dash.cloudflare.com"><strong>Cloudflare</strong><span>dash.cloudflare.com<br>edge network</span></a>
-          <a class="surface" href="/projects/"><strong>Personal Projects</strong><span>github.com/<br>jamesbregenzer<br>active builds</span></a>
-          <div class="terminal-note">&gt; observing the open web<br>one signal at a time.<br><br>&gt; _</div>
+
+        <section class="connected-surfaces" aria-labelledby="connected-title">
+          <h2 class="panel-label" id="connected-title">connected_surfaces</h2>
+          <div class="surface-grid">
+            <a href="https://github.com/jamesbregenzer"><strong>GitHub</strong><span>github.com/<br>jamesbregenzer<br>active</span></a>
+            <a href="https://make.wordpress.org/"><strong>WordPress</strong><span>make.wordpress.org<br>core contributor</span></a>
+            <a href="https://radar.james.bregenzer.dev"><strong>Radar</strong><span>radar.james.bregenzer.dev<br>ticket intelligence</span></a>
+            <a href="https://dash.cloudflare.com"><strong>Cloudflare</strong><span>dash.cloudflare.com<br>edge network</span></a>
+            <a href="/projects/"><strong>Personal Projects</strong><span>github.com/<br>jamesbregenzer<br>active builds</span></a>
+            <div class="pixel-companion" aria-hidden="true">
+              <svg viewBox="0 0 92 92" shape-rendering="crispEdges">
+                <rect x="28" y="10" width="28" height="8" fill="#ddd"></rect><rect x="20" y="18" width="44" height="10" fill="#f2f2f2"></rect><rect x="14" y="28" width="56" height="16" fill="#d7d7d7"></rect><rect x="20" y="44" width="44" height="18" fill="#27212f"></rect><rect x="26" y="48" width="12" height="8" fill="#ff2e2e"></rect><rect x="46" y="48" width="12" height="8" fill="#ff2e2e"></rect><rect x="34" y="60" width="18" height="6" fill="#fff"></rect><rect x="8" y="50" width="18" height="28" fill="#32115b"></rect><rect x="62" y="50" width="18" height="28" fill="#32115b"></rect><rect x="2" y="64" width="18" height="22" fill="#6920c5"></rect><rect x="72" y="64" width="18" height="22" fill="#6920c5"></rect>
+              </svg>
+              <p>&gt; observing the open web<br>one signal at a time.<br><br>&gt; _</p>
+            </div>
+          </div>
         </section>
       </main>
     </div>
