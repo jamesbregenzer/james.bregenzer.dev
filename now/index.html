@@ -4,40 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Now — James Bregenzer</title>
-  <meta name="description" content="Current focus and active projects from James Bregenzer.">
-  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Current focus and active project notes from James Bregenzer.">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
   <div class="site-shell">
-    <header class="site-header" aria-label="Site header">
-  <a class="brand" href="/" aria-label="james.bregenzer.dev home">
-    <span class="brand-mark" aria-hidden="true"><span></span></span>
-    <span class="brand-copy"><strong>james.bregenzer.dev</strong><small>systems online</small></span>
-  </a>
-  <nav class="nav" aria-label="Primary navigation">
-    <a href="/projects/">Projects</a>
-    <a href="/activity/">Activity</a>
-    <a href="/now/" aria-current="page">Now</a>
-    <a href="/uses/">Uses</a>
-    <a href="https://github.com/jamesbregenzer">GitHub</a>
-  </nav>
-</header>
+    <header class="site-header">
+      <a class="brand" href="/"><span class="brand-mark"><span></span></span><span class="brand-text"><strong>james.bregenzer.dev</strong><em>systems online</em></span></a>
+      <nav class="nav"><a href="/projects/">Projects</a><a href="/activity/">Activity</a><a href="/now/">Now</a><a href="/uses/">Uses</a><a href="https://github.com/jamesbregenzer">GitHub</a></nav>
+    </header>
     <main>
-  <section class="page-hero" aria-labelledby="now-title">
-    <p class="eyebrow"><span class="pulse-dot"></span>Now</p>
-    <h1 id="now-title">Current focus.</h1>
-    <p class="hero-copy">A short, non-resume snapshot of what I am building and exploring right now.</p>
-  </section>
-  <section class="section split-section">
-    <article class="focus-card"><p class="section-kicker">Building</p><h2>Developer tooling and project surfaces.</h2><p>WP Core Radar, this developer hub, and the first version of a broader activity dashboard that can pull from GitHub, Radar, and Cloudflare.</p></article>
-    <article class="focus-card"><p class="section-kicker">Exploring</p><h2>Cloudflare, WordPress Core, and automation.</h2><p>Workers, Pages, GitHub-powered data flows, local WordPress testing, and ways to make contribution workflows faster without making them shallow.</p></article>
-  </section>
-</main>
-    <footer class="site-footer">
-      <p>Built with static files, GitHub, and Cloudflare Pages.</p>
-      <p><a href="mailto:james@bregenzer.dev">james@bregenzer.dev</a></p>
-    </footer>
+      <section class="page-hero"><p class="eyebrow">Now</p><h1 class="page-title">Current focus.</h1><p class="hero-copy">A short, non-resume snapshot of what I am building and exploring right now.</p></section>
+      <section class="section workbench-grid">
+        <div class="queue panel">
+          <article class="queue-item"><span class="queue-icon live"></span><div><h3>Building</h3><p>WP Core Radar, this developer hub, and the first version of a broader project/activity dashboard.</p></div><strong class="pill green">Active</strong></article>
+          <article class="queue-item"><span class="queue-icon building"></span><div><h3>Exploring</h3><p>Cloudflare Workers, Pages, GitHub-powered data flows, WordPress Core contribution workflows, and developer tooling.</p></div><strong class="pill blue">Ongoing</strong></article>
+        </div>
+        <aside class="focus-card panel"><p class="eyebrow">Working theory</p><h2>Small tools can create meaningful leverage.</h2><p>Especially when they reduce search time, clarify decisions, or make repeated work easier to trust.</p></aside>
+      </section>
+    </main>
+    <footer class="site-footer"><span>Updated when useful.</span><a href="mailto:james@bregenzer.dev">james@bregenzer.dev</a></footer>
   </div>
 </body>
 </html>

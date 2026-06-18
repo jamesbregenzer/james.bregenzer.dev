@@ -4,121 +4,174 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>James Bregenzer — Developer Operations Center</title>
-  <meta name="description" content="A developer operations center for projects, activity, Cloudflare experiments, and open source work from James Bregenzer.">
-  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A public developer operations center for projects, activity, experiments, and open source work from James Bregenzer.">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
   <div class="site-shell">
     <header class="site-header" aria-label="Site header">
-  <a class="brand" href="/" aria-label="james.bregenzer.dev home">
-    <span class="brand-mark" aria-hidden="true"><span></span></span>
-    <span class="brand-copy"><strong>james.bregenzer.dev</strong><small>systems online</small></span>
-  </a>
-  <nav class="nav" aria-label="Primary navigation">
-    <a href="/projects/">Projects</a>
-    <a href="/activity/">Activity</a>
-    <a href="/now/">Now</a>
-    <a href="/uses/">Uses</a>
-    <a href="https://github.com/jamesbregenzer">GitHub</a>
-  </nav>
-</header>
+      <a class="brand" href="/" aria-label="james.bregenzer.dev home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span class="brand-text">
+          <strong>james.bregenzer.dev</strong>
+          <em>systems online</em>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/projects/">Projects</a>
+        <a href="/activity/">Activity</a>
+        <a href="/now/">Now</a>
+        <a href="/uses/">Uses</a>
+        <a href="https://github.com/jamesbregenzer">GitHub</a>
+      </nav>
+    </header>
+
     <main>
-  <section class="hero hero-dashboard" aria-labelledby="home-title">
-    <div class="hero-content">
-      <p class="eyebrow"><span class="pulse-dot"></span>Developer operations center</p>
-      <h1 id="home-title">Building systems that turn signals into decisions.</h1>
-      <p class="hero-copy">A public workshop for developer tooling, WordPress contribution workflows, Cloudflare experiments, and useful internet machinery.</p>
-      <div class="hero-actions" aria-label="Primary actions">
-        <a class="button button-primary" href="/projects/">View projects</a>
-        <a class="button" href="https://radar.james.bregenzer.dev">Open Radar</a>
-        <a class="button" href="/activity/">Recent activity</a>
-      </div>
-    </div>
-    <aside class="signal-panel" aria-label="Signal map">
-      <div class="orbit orbit-one"></div>
-      <div class="orbit orbit-two"></div>
-      <div class="orbit orbit-three"></div>
-      <div class="sweep"></div>
-      <span class="signal signal-a"></span>
-      <span class="signal signal-b"></span>
-      <span class="signal signal-c"></span>
-      <div class="signal-readout">
-        <strong>Signal map</strong>
-        <span>GitHub · Radar · Cloudflare · WordPress</span>
-      </div>
-    </aside>
-  </section>
-
-  <section class="section" aria-labelledby="status-title">
-    <div class="section-header">
-      <div>
-        <p class="section-kicker">Live-ish system status</p>
-        <h2 id="status-title">Signals worth watching.</h2>
-      </div>
-      <p class="section-note">Static in V1. Designed for GitHub, Radar, and Cloudflare data feeds next.</p>
-    </div>
-    <div class="metric-grid">
-      <article class="metric-card accent-green"><span>GitHub activity</span><strong>87</strong><small>contributions this month</small><i></i></article>
-      <article class="metric-card accent-blue"><span>WordPress Core</span><strong>24</strong><small>patches / tickets this month</small><i></i></article>
-      <article class="metric-card accent-purple"><span>Radar tickets</span><strong>280</strong><small>unique tickets scored</small><i></i></article>
-      <article class="metric-card accent-orange"><span>Cloudflare edge</span><strong>CF</strong><small>Pages + Workers online</small><i></i></article>
-      <article class="metric-card accent-slate"><span>Active surfaces</span><strong>3</strong><small>portfolio · radar · admin</small><i></i></article>
-    </div>
-  </section>
-
-  <section class="section split-section" aria-labelledby="build-title">
-    <div>
-      <div class="section-header compact">
-        <div>
-          <p class="section-kicker">Currently building</p>
-          <h2 id="build-title">Systems on the workbench.</h2>
+      <section class="control-grid" aria-labelledby="hero-heading">
+        <div class="hero-panel panel panel-large">
+          <div class="panel-status"><span class="status-dot"></span>Developer Operations Center</div>
+          <h1 id="hero-heading">Building systems that turn signals into decisions.</h1>
+          <p class="hero-copy">A public workshop for developer tooling, WordPress contribution workflows, Cloudflare experiments, and useful internet machinery.</p>
+          <div class="action-row">
+            <a class="button button-primary" href="/projects/">View projects</a>
+            <a class="button" href="https://radar.james.bregenzer.dev">Open Radar</a>
+            <a class="button" href="/activity/">Recent activity</a>
+          </div>
         </div>
-      </div>
-      <div class="project-stack">
-        <article class="project-row live">
-          <div class="project-icon">◎</div>
-          <div><h3>WP Core Radar</h3><p>Contribution radar and review workflow for WordPress Core tickets.</p><a href="/project/radar/">Project notes</a></div>
-          <span class="status-pill">Live</span>
-        </article>
-        <article class="project-row building">
-          <div class="project-icon">◒</div>
-          <div><h3>Developer Hub</h3><p>This site: a public activity dashboard, project index, and workshop log.</p><a href="https://github.com/jamesbregenzer/james.bregenzer.dev">Source</a></div>
-          <span class="status-pill">Building</span>
-        </article>
-        <article class="project-row planning">
-          <div class="project-icon">◇</div>
-          <div><h3>Darkrai</h3><p>Experimental TCG tooling and strange side-project energy.</p><a href="/projects/">Coming soon</a></div>
-          <span class="status-pill">Planning</span>
-        </article>
-      </div>
-    </div>
-    <aside class="focus-card">
-      <p class="section-kicker">Current focus</p>
-      <h2>Better tools. Cleaner data. Smarter decisions.</h2>
-      <p>Most of my favorite projects collect messy signals, score them, and turn them into a useful next step.</p>
-      <div class="tag-cloud"><span>WordPress</span><span>Cloudflare</span><span>GitHub</span><span>Automation</span><span>Open source</span></div>
-    </aside>
-  </section>
 
-  <section class="section" aria-labelledby="activity-title">
-    <div class="section-header">
-      <div>
-        <p class="section-kicker">Recent activity</p>
-        <h2 id="activity-title">Things that moved.</h2>
-      </div>
-      <a class="text-link" href="/activity/">View activity</a>
-    </div>
-    <div class="timeline-card">
-      <article><time>Jun 17</time><div><h3>Radar moved to its own hostname</h3><p>Separated the developer hub from the live Cloudflare Worker application.</p></div></article>
-      <article><time>Jun 17</time><div><h3>james.bregenzer.dev went live</h3><p>Created the public repo and Cloudflare Pages deployment for this developer hub.</p></div></article>
-      <article><time>Jun 16</time><div><h3>WordPress Core testing workflow refined</h3><p>Tested and commented on contribution opportunities surfaced by Radar.</p></div></article>
-    </div>
-  </section>
-</main>
+        <aside class="signal-panel panel" aria-labelledby="signal-heading">
+          <div class="panel-topline">
+            <span>Signal map</span>
+            <span class="pill green">live</span>
+          </div>
+          <div class="signal-map" aria-hidden="true">
+            <div class="radar-sweep"></div>
+            <div class="ring ring-one"></div>
+            <div class="ring ring-two"></div>
+            <div class="ring ring-three"></div>
+            <div class="beam beam-a"></div>
+            <div class="beam beam-b"></div>
+            <div class="node node-github"><span>GitHub</span></div>
+            <div class="node node-radar"><span>Radar</span></div>
+            <div class="node node-cloudflare"><span>Cloudflare</span></div>
+            <div class="node node-wordpress"><span>WordPress</span></div>
+          </div>
+          <h2 id="signal-heading">Signal map</h2>
+          <p>GitHub → Radar → Cloudflare → WordPress</p>
+        </aside>
+      </section>
+
+      <section class="section compact" aria-labelledby="status-heading">
+        <div class="section-head split-head">
+          <div>
+            <p class="eyebrow">Live-ish system status</p>
+            <h2 id="status-heading">Signals worth watching.</h2>
+          </div>
+          <p class="section-note">Static in V1. Designed for GitHub, Radar, and Cloudflare data feeds next.</p>
+        </div>
+
+        <div class="status-grid">
+          <article class="metric-card panel accent-green">
+            <span>GitHub activity</span>
+            <strong>87</strong>
+            <em>contributions this month</em>
+            <div class="spark spark-green" aria-hidden="true"></div>
+          </article>
+          <article class="metric-card panel accent-blue">
+            <span>WordPress Core</span>
+            <strong>24</strong>
+            <em>patches / tickets this month</em>
+            <div class="spark spark-blue" aria-hidden="true"></div>
+          </article>
+          <article class="metric-card panel accent-purple">
+            <span>Radar tickets</span>
+            <strong>280</strong>
+            <em>unique tickets scored</em>
+            <div class="spark spark-purple" aria-hidden="true"></div>
+          </article>
+          <article class="metric-card panel accent-orange">
+            <span>Cloudflare edge</span>
+            <strong>CF</strong>
+            <em>Pages + Workers online</em>
+            <div class="spark spark-orange" aria-hidden="true"></div>
+          </article>
+          <article class="metric-card panel accent-neutral">
+            <span>Active surfaces</span>
+            <strong>3</strong>
+            <em>portfolio · radar · admin</em>
+            <div class="spark spark-neutral" aria-hidden="true"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section workbench-grid" aria-labelledby="workbench-heading">
+        <div>
+          <p class="eyebrow">Currently building</p>
+          <h2 id="workbench-heading">Systems on the workbench.</h2>
+          <div class="queue panel">
+            <article class="queue-item">
+              <span class="queue-icon live"></span>
+              <div>
+                <h3>WP Core Radar</h3>
+                <p>Contribution radar and review workflow for WordPress Core tickets.</p>
+                <a href="/project/radar/">Project notes</a>
+              </div>
+              <strong class="pill green">Live</strong>
+            </article>
+            <article class="queue-item">
+              <span class="queue-icon building"></span>
+              <div>
+                <h3>Developer Hub</h3>
+                <p>This site: a public activity dashboard, project index, and workshop log.</p>
+                <a href="https://github.com/jamesbregenzer/james.bregenzer.dev">Source</a>
+              </div>
+              <strong class="pill blue">Building</strong>
+            </article>
+            <article class="queue-item">
+              <span class="queue-icon planning"></span>
+              <div>
+                <h3>Darkrai</h3>
+                <p>Experimental TCG tooling and strange side-project energy.</p>
+                <a href="/projects/">Coming soon</a>
+              </div>
+              <strong class="pill purple">Planning</strong>
+            </article>
+          </div>
+        </div>
+
+        <aside class="focus-card panel">
+          <p class="eyebrow">Current focus</p>
+          <h2>Better tools.<br>Cleaner data.<br>Smarter decisions.</h2>
+          <p>Most of my favorite projects collect messy signals, score them, and turn them into a useful next step.</p>
+          <div class="tag-list">
+            <span class="tag">WordPress</span>
+            <span class="tag">Cloudflare</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Open source</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" aria-labelledby="activity-heading">
+        <div class="section-head split-head">
+          <div>
+            <p class="eyebrow">Recent activity</p>
+            <h2 id="activity-heading">Things that moved.</h2>
+          </div>
+          <a class="text-link" href="/activity/">View activity</a>
+        </div>
+        <div class="log-panel panel">
+          <article class="log-row"><time>Jun 17</time><div><h3>Radar moved to its own hostname</h3><p>Separated the developer hub from the live Cloudflare Worker application.</p></div></article>
+          <article class="log-row"><time>Jun 17</time><div><h3>james.bregenzer.dev went live</h3><p>Created the public repo and Cloudflare Pages deployment for this developer hub.</p></div></article>
+          <article class="log-row"><time>Jun 16</time><div><h3>WordPress Core testing workflow refined</h3><p>Tested and commented on contribution opportunities surfaced by Radar.</p></div></article>
+        </div>
+      </section>
+    </main>
+
     <footer class="site-footer">
-      <p>Built with static files, GitHub, and Cloudflare Pages.</p>
-      <p><a href="mailto:james@bregenzer.dev">james@bregenzer.dev</a></p>
+      <span>Built with static files, GitHub, and Cloudflare Pages.</span>
+      <a href="mailto:james@bregenzer.dev">james@bregenzer.dev</a>
     </footer>
   </div>
 </body>
