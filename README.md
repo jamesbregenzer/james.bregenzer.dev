@@ -1,22 +1,28 @@
 # james.bregenzer.dev
 
-A public developer operations center for projects, experiments, activity, and open source work.
+Public development terminal and project hub.
 
-Live site: https://james.bregenzer.dev
+This site is intentionally built as a static Cloudflare Pages project. The homepage is designed as a retro terminal-inspired operations dashboard for projects, activity, signals, and experiments.
+
+## Live surfaces
+
+- Developer hub: https://james.bregenzer.dev
+- WP Core Radar: https://radar.james.bregenzer.dev
+- Source: https://github.com/jamesbregenzer/james.bregenzer.dev
 
 ## Structure
 
-- `/` — mission-control style homepage
-- `/projects/` — project index
-- `/project/radar/` — WP Core Radar project page
-- `/activity/` — recent activity feed
-- `/now/` — current focus
-- `/uses/` — tools and stack
-
-## Design direction
-
-The site is intentionally closer to a lightweight operations console than a traditional portfolio. It emphasizes active systems, live-ish signals, project status, and current work rather than resume content.
+```text
+/
+├── index.html
+├── projects/
+├── project/radar/
+├── activity/
+├── now/
+├── uses/
+└── assets/styles.css
+```
 
 ## Deployment
 
-Static HTML/CSS hosted on Cloudflare Pages.
+Hosted on Cloudflare Pages with no build step.
