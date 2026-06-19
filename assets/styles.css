@@ -43,8 +43,6 @@ a:focus-visible { outline: 1px solid var(--green); outline-offset: 4px; }
 .skip-link:focus { top: 1rem; }
 
 .observatory-scene {
-  --scene-shift-x: 0px;
-  --scene-shift-y: 0px;
   position: relative;
   width: 100%;
   min-height: 650px;
@@ -63,10 +61,7 @@ a:focus-visible { outline: 1px solid var(--green); outline-offset: 4px; }
   height: 103%;
   object-fit: cover;
   object-position: center;
-  image-rendering: pixelated;
   filter: brightness(.88) saturate(.9) contrast(1.03);
-  transform: translate3d(calc(var(--scene-shift-x) * -.18), calc(var(--scene-shift-y) * -.18), 0);
-  transition: transform 1.1s ease-out;
 }
 .observatory-scene::before {
   content: "";
@@ -131,16 +126,13 @@ a:focus-visible { outline: 1px solid var(--green); outline-offset: 4px; }
   position: absolute;
   display: block;
   cursor: default;
-  transform: translate3d(var(--scene-shift-x), var(--scene-shift-y), 0);
-  transition: transform .6s ease-out;
 }
 .scene-object img {
   display: block;
   width: 100%;
   height: auto;
   pointer-events: none;
-  image-rendering: pixelated;
-  filter: brightness(.86) saturate(.82) drop-shadow(0 8px 8px rgba(0, 0, 0, .62));
+  filter: brightness(.8) saturate(.78) drop-shadow(0 9px 9px rgba(0, 0, 0, .66));
   transition: filter .28s ease, transform .28s ease;
 }
 .scene-object::after {
@@ -153,6 +145,32 @@ a:focus-visible { outline: 1px solid var(--green); outline-offset: 4px; }
   background: var(--green);
   filter: blur(24px);
   transition: opacity .28s, transform .28s;
+}
+.terminal::before,
+.workbench::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 50%;
+}
+.terminal::before {
+  left: 23%;
+  top: 8%;
+  width: 50%;
+  height: 37%;
+  background: rgba(109, 244, 82, .08);
+  filter: blur(9px);
+  animation: screen-flicker 7s steps(1, end) infinite;
+}
+.workbench::before {
+  right: 4%;
+  top: 3%;
+  width: 18%;
+  height: 25%;
+  background: rgba(204, 147, 74, .11);
+  filter: blur(13px);
+  animation: lantern-pulse 8s ease-in-out infinite;
 }
 .scene-object:hover,
 .scene-object:focus-visible { cursor: pointer; outline: 0; }
@@ -203,33 +221,31 @@ a:focus-visible { outline: 1px solid var(--green); outline-offset: 4px; }
   transform: translateY(0);
   transition-delay: .08s, .08s, 0s;
 }
-.telescope { left: 36.5%; top: 18%; width: 24%; }
-.telescope:not(:hover):not(:focus-visible) img { filter: brightness(1.16) saturate(.95) drop-shadow(0 9px 9px rgba(0, 0, 0, .66)); }
+.telescope { left: 38%; top: 16%; width: 18%; }
+.telescope:not(:hover):not(:focus-visible) img { filter: brightness(.9) saturate(.84) drop-shadow(0 10px 10px rgba(0, 0, 0, .7)); }
 .telescope .object-label { left: -17%; top: -8%; }
 .telescope .object-label::after { left: 100%; top: 58%; width: 42px; height: 1px; }
-.workbench { left: 18%; bottom: 8%; width: 25%; }
+.workbench { left: 17%; bottom: 8%; width: 27%; }
 .workbench .object-label { left: -19%; top: -8%; }
 .workbench .object-label::after { left: 100%; top: 58%; width: 35px; height: 1px; }
-.terminal { left: 25.5%; top: 48%; width: 11.5%; z-index: 12; }
+.terminal { left: 25%; top: 47%; width: 13%; z-index: 12; }
 .terminal .object-label { right: 97%; bottom: -5%; }
 .terminal .object-label::after { left: 100%; top: 58%; width: 31px; height: 1px; }
-.archive { right: 18%; top: 25%; width: 10%; }
+.archive { right: 17%; top: 20%; width: 11%; }
 .archive:not(:hover):not(:focus-visible) img,
 .door:not(:hover):not(:focus-visible) img { filter: brightness(1.02) saturate(.88) drop-shadow(0 8px 8px rgba(0, 0, 0, .64)); }
 .archive .object-label { right: 82%; top: -9%; }
 .archive .object-label::after { left: 100%; top: 58%; width: 29px; height: 1px; }
-.door { right: 6%; top: 27%; width: 10%; }
+.door { right: 5%; top: 20%; width: 11%; }
 .door .object-label { right: 79%; top: 30%; }
 .door .object-label::after { left: 100%; top: 58%; width: 28px; height: 1px; }
 .whisperer {
   position: absolute;
   z-index: 9;
-  right: 24%;
-  bottom: 5%;
-  width: 22%;
+  right: 22%;
+  bottom: 3%;
+  width: 31%;
   pointer-events: none;
-  transform: translate3d(calc(var(--scene-shift-x) * .45), calc(var(--scene-shift-y) * .45), 0);
-  transition: transform 1s ease-out;
 }
 .whisperer img {
   position: absolute;
@@ -237,19 +253,18 @@ a:focus-visible { outline: 1px solid var(--green); outline-offset: 4px; }
   bottom: 0;
   width: 100%;
   height: auto;
-  image-rendering: pixelated;
 }
 .whisperer-core {
   z-index: 2;
-  filter: brightness(.94) saturate(.84) drop-shadow(0 12px 11px rgba(0, 0, 0, .7));
+  filter: brightness(.83) saturate(.78) drop-shadow(0 14px 13px rgba(0, 0, 0, .74));
 }
 .whisperer-smoke {
   z-index: 1;
-  width: 105% !important;
-  right: -40% !important;
-  bottom: 26% !important;
-  opacity: .4;
-  filter: blur(.2px) brightness(.84) saturate(.78);
+  width: 78% !important;
+  right: -34% !important;
+  bottom: 31% !important;
+  opacity: .3;
+  filter: blur(.35px) brightness(.72) saturate(.68);
   animation: smoke-drift 18s ease-in-out infinite alternate;
 }
 .status-terminal {
@@ -295,7 +310,7 @@ a:focus-visible { outline: 1px solid var(--green); outline-offset: 4px; }
   min-height: 100vh;
   background:
     linear-gradient(rgba(2, 5, 3, .8), rgba(2, 5, 3, .95)),
-    url("/assets/img/room-background.png") center / cover fixed no-repeat;
+    url("/assets/img/room-background.webp") center / cover fixed no-repeat;
 }
 .interior-shell { min-height: calc(100vh - 66px); }
 .interior-header {
@@ -341,6 +356,12 @@ a:focus-visible { outline: 1px solid var(--green); outline-offset: 4px; }
 @keyframes room-breathe { 50% { opacity: .72; } }
 @keyframes smoke-drift { to { transform: translate3d(10px, -7px, 0) scale(1.025); opacity: .58; } }
 @keyframes object-pulse { 50% { filter: brightness(1.35) drop-shadow(0 0 17px rgba(124, 255, 101, .6)); } }
+@keyframes screen-flicker {
+  0%, 94%, 100% { opacity: .72; }
+  95% { opacity: .58; }
+  96% { opacity: .78; }
+}
+@keyframes lantern-pulse { 50% { opacity: .68; transform: scale(.96); } }
 
 @media (max-width: 900px) {
   body::after { opacity: .08; }
@@ -349,16 +370,14 @@ a:focus-visible { outline: 1px solid var(--green); outline-offset: 4px; }
   .observatory-id { top: 15px; left: 17px; }
   .observatory-id a { font-size: 12px; }
   .observatory-id p { font-size: 8px; }
-  .scene-object,
-  .whisperer { transform: none; }
   .scene-object { pointer-events: none; }
   .object-label, .status-terminal { display: none; }
-  .telescope { left: 35%; top: 19%; width: 25%; }
-  .workbench { left: 15%; bottom: 4%; width: 28%; }
-  .terminal { left: 24%; top: 49%; width: 13%; }
-  .archive { right: 17%; top: 27%; width: 11%; }
-  .door { right: 4%; top: 28%; width: 11%; }
-  .whisperer { right: 22%; bottom: 2%; width: 24%; }
+  .telescope { left: 37%; top: 16%; width: 19%; }
+  .workbench { left: 13%; bottom: 3%; width: 31%; }
+  .terminal { left: 23%; top: 47%; width: 14%; }
+  .archive { right: 16%; top: 19%; width: 12%; }
+  .door { right: 3%; top: 19%; width: 12%; }
+  .whisperer { right: 19%; bottom: 1%; width: 35%; }
   .mobile-navigation { display: grid; gap: 6px; padding: 12px; background: #030604; }
   .mobile-navigation a {
     display: grid;
@@ -384,7 +403,7 @@ a:focus-visible { outline: 1px solid var(--green); outline-offset: 4px; }
 
 @media (max-width: 520px) {
   .observatory-scene { aspect-ratio: 1.32; }
-  .scene-object img { filter: brightness(.75) saturate(.76) drop-shadow(0 5px 5px rgba(0, 0, 0, .5)); }
+  .scene-object img { filter: brightness(.78) saturate(.76) drop-shadow(0 5px 5px rgba(0, 0, 0, .55)); }
   .site-footer nav { gap: 10px 16px; }
   .interior-shell { min-height: calc(100vh - 110px); }
   .interior-header { align-items: flex-start; flex-direction: column; padding: 17px; }

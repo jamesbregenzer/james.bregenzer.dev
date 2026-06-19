@@ -7,6 +7,10 @@ background plus separate transparent assets for every navigation object, the
 Whisperer, and its wisp effect. Labels are discovered on hover or keyboard focus
 on desktop; mobile uses a clear stacked navigation list.
 
+Foreground artwork is stored as high-resolution transparent PNG layers under
+`assets/img/`; the room uses an optimized WebP layer. The room and objects
+remain fixed while only restrained ambient effects animate.
+
 ## Local preview
 
 From the repository root:
