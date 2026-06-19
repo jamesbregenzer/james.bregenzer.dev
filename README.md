@@ -1,10 +1,11 @@
 # james.bregenzer.dev
 
-An atmospheric pixel-horror developer observatory for James Bregenzer.
+An atmospheric, layered pixel-horror developer observatory for James Bregenzer.
 
-The site is intentionally dependency-free: semantic HTML, organized CSS, and a
-local pixel-art environment asset. Navigation is embedded in the observatory
-scene on desktop and becomes a clear stacked list on mobile.
+The site is intentionally dependency-free. The homepage uses an empty-room
+background plus separate transparent assets for every navigation object, the
+Whisperer, and its wisp effect. Labels are discovered on hover or keyboard focus
+on desktop; mobile uses a clear stacked navigation list.
 
 ## Local preview
 

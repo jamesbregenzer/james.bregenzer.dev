@@ -7,68 +7,49 @@
   <meta name="description" content="James Bregenzer's observatory: projects, signals, activity, notes, and unfinished experiments.">
   <title>james.bregenzer.dev — observatory online</title>
   <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/script.js" defer></script>
 </head>
 <body class="home">
-  <a class="skip-link" href="#navigation">skip to navigation</a>
+  <a class="skip-link" href="#main">skip to observatory</a>
 
-  <main class="observatory">
-    <section class="identity" aria-labelledby="home-title">
-      <header class="site-header">
-        <a href="/" class="site-name">james.bregenzer.dev</a>
+  <main id="main">
+    <section class="observatory-scene" aria-label="The dome observatory">
+      <img class="room-layer" src="/assets/img/room-background.png" alt="An empty, ancient dome observatory overlooking a distant city at night.">
+      <div class="sky-twinkle" aria-hidden="true"></div>
+      <div class="room-light" aria-hidden="true"></div>
+
+      <header class="observatory-id">
+        <a href="/">james.bregenzer.dev</a>
         <p>observatory online <i aria-hidden="true"></i></p>
       </header>
 
-      <div class="intro">
-        <h1 id="home-title">turning<br>signals<br>into<br>decisions.</h1>
-        <p>I build tools, automate workflows, and contribute to the open web.</p>
-        <div class="intro-actions">
-          <a href="/projects/">[ explore projects ]</a>
-          <a href="/logbook/">[ recent activity ]</a>
-        </div>
-      </div>
-
-      <footer class="identity-footer">
-        <span>signal://james-bregenzer</span>
-        <span>© 2026</span>
-      </footer>
-    </section>
-
-    <section class="room" aria-label="The dome observatory">
-      <img src="/assets/observatory.png" alt="A dark pixel-art dome observatory with a telescope, old terminals, a workbench, an arched door, and the seated Whisperer.">
-      <div class="room-vignette" aria-hidden="true"></div>
-      <div class="star-drift" aria-hidden="true"></div>
-
-      <nav class="object-navigation" id="navigation" aria-label="Explore the observatory">
-        <a class="object-link telescope" href="/observations/">
-          <span class="object-target" aria-hidden="true"></span>
+      <nav class="scene-navigation" aria-label="Objects in the observatory">
+        <a class="scene-object telescope" href="/observations/" data-object="telescope" aria-label="Observations — Watch the signals">
+          <img src="/assets/img/telescope.png" alt="">
           <span class="object-label"><b>observations</b><small>Watch the signals</small></span>
         </a>
-
-        <a class="object-link workbench" href="/projects/">
-          <span class="object-target" aria-hidden="true"></span>
+        <a class="scene-object workbench" href="/projects/" data-object="workbench" aria-label="Projects — Things I'm building">
+          <img src="/assets/img/workbench.png" alt="">
           <span class="object-label"><b>projects</b><small>Things I'm building</small></span>
         </a>
-
-        <a class="object-link terminal-link" href="/logbook/">
-          <span class="object-target" aria-hidden="true"></span>
+        <a class="scene-object terminal" href="/logbook/" data-object="terminal" aria-label="Logbook — Recent activity">
+          <img src="/assets/img/terminal.png" alt="">
           <span class="object-label"><b>logbook</b><small>Recent activity</small></span>
         </a>
-
-        <a class="object-link archive" href="/archive/">
-          <span class="object-target" aria-hidden="true"></span>
+        <a class="scene-object archive" href="/archive/" data-object="archive" aria-label="Archive — Notes and history">
+          <img src="/assets/img/archive-cabinet.png" alt="">
           <span class="object-label"><b>archive</b><small>Notes &amp; history</small></span>
         </a>
-
-        <a class="object-link door" href="/experiments/">
-          <span class="object-target" aria-hidden="true"></span>
+        <a class="scene-object door" href="/experiments/" data-object="door" aria-label="Experiments — Unfinished things">
+          <img src="/assets/img/door.png" alt="">
           <span class="object-label"><b>experiments</b><small>Unfinished things</small></span>
         </a>
       </nav>
 
-      <aside class="whisperer-label" aria-label="The Whisperer">
-        <b>The Whisperer</b>
-        <span>Observer. Archivist.<br>Between the signals.</span>
-      </aside>
+      <div class="whisperer" aria-label="The Whisperer watches from the observatory">
+        <img class="whisperer-smoke" src="/assets/img/whisperer-smoke.png" alt="">
+        <img class="whisperer-core" src="/assets/img/whisperer-core.png" alt="">
+      </div>
 
       <aside class="status-terminal" aria-label="Observatory status">
         <b>observatory online</b>
@@ -80,7 +61,7 @@
       </aside>
     </section>
 
-    <nav class="mobile-navigation" aria-label="Observatory destinations">
+    <nav class="mobile-navigation" id="mobile-navigation" aria-label="Observatory destinations">
       <a href="/observations/"><i aria-hidden="true">⌁</i><span><b>observations</b><small>Watch the signals</small></span><em>›</em></a>
       <a href="/projects/"><i aria-hidden="true">▦</i><span><b>projects</b><small>Things I'm building</small></span><em>›</em></a>
       <a href="/logbook/"><i aria-hidden="true">▤</i><span><b>logbook</b><small>Recent activity</small></span><em>›</em></a>
@@ -88,5 +69,17 @@
       <a href="/experiments/"><i aria-hidden="true">⌂</i><span><b>experiments</b><small>Unfinished things</small></span><em>›</em></a>
     </nav>
   </main>
+
+  <footer class="site-footer">
+    <p>© 2026 James Bregenzer</p>
+    <nav aria-label="External links">
+      <a href="https://github.com/jamesbregenzer">◖ GitHub</a>
+      <a href="https://www.cloudflare.com/">☁ Cloudflare</a>
+      <a href="https://make.wordpress.org/">ⓦ WordPress</a>
+      <a href="/feed.xml">◔ RSS</a>
+      <a href="mailto:james@bregenzer.dev">□ Email</a>
+    </nav>
+    <p class="footer-prompt">&gt;_</p>
+  </footer>
 </body>
 </html>
