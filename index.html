@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#050806">
   <meta name="description" content="James Bregenzer's observatory: projects, signals, activity, notes, and unfinished experiments.">
   <title>james.bregenzer.dev — observatory online</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/styles.css">
   <script src="/assets/script.js" defer></script>
 </head>
@@ -14,9 +15,17 @@
 
   <main id="main">
     <section class="observatory-scene" aria-label="The dome observatory">
-      <img class="room-layer" src="/assets/img/room-background.webp" alt="An empty, ancient dome observatory overlooking a distant city at night.">
-      <div class="sky-twinkle" aria-hidden="true"></div>
-      <div class="room-light" aria-hidden="true"></div>
+      <img class="room-layer" src="/assets/img/room-background-phase3.webp" alt="An empty, ancient dome observatory overlooking a storm-dark city at night.">
+      <div class="window-weather" aria-hidden="true">
+        <i class="cloud cloud-one"></i>
+        <i class="cloud cloud-two"></i>
+        <i class="distant-signal"></i>
+        <i class="distant-lightning"></i>
+      </div>
+      <div class="lantern-layer" aria-hidden="true">
+        <i class="wall-lantern lantern-left"></i>
+        <i class="wall-lantern lantern-right"></i>
+      </div>
 
       <header class="observatory-id">
         <a href="/">james.bregenzer.dev</a>
@@ -28,12 +37,20 @@
           <img src="/assets/img/telescope.png" alt="">
           <span class="object-label"><b>observations</b><small>Watch the signals</small></span>
         </a>
-        <a class="scene-object workbench" href="/projects/" data-object="workbench" aria-label="Projects — Things I'm building">
+        <a class="scene-object workbench" href="/projects/" data-object="workbench" aria-label="Projects — See what I'm building">
           <img src="/assets/img/workbench.png" alt="">
-          <span class="object-label"><b>projects</b><small>Things I'm building</small></span>
+          <span class="object-label"><b>projects</b><small>See what I'm building</small></span>
         </a>
         <a class="scene-object terminal" href="/logbook/" data-object="terminal" aria-label="Logbook — Recent activity">
           <img src="/assets/img/terminal.png" alt="">
+          <span class="terminal-display" aria-hidden="true">
+            <b>OBSERVATORY ONLINE</b>
+            <span>Signals detected.</span>
+            <span>Three active constructions.</span>
+            <span>One unfinished experiment.</span>
+            <span>Several things worth investigating.</span>
+            <span class="terminal-cursor">&gt; _</span>
+          </span>
           <span class="object-label"><b>logbook</b><small>Recent activity</small></span>
         </a>
         <a class="scene-object archive" href="/archive/" data-object="archive" aria-label="Archive — Notes and history">
@@ -47,23 +64,31 @@
       </nav>
 
       <div class="whisperer" aria-label="The Whisperer watches from the observatory">
-        <img class="whisperer-smoke" src="/assets/img/whisperer-smoke.png" alt="">
+        <svg class="whisperer-wisps" viewBox="0 0 620 470" aria-hidden="true">
+          <defs>
+            <filter id="wisp-blur" x="-35%" y="-35%" width="170%" height="170%">
+              <feGaussianBlur stdDeviation="8"></feGaussianBlur>
+            </filter>
+            <linearGradient id="wisp-fade" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#332954" stop-opacity=".62"></stop>
+              <stop offset=".58" stop-color="#3b5271" stop-opacity=".28"></stop>
+              <stop offset="1" stop-color="#55738d" stop-opacity="0"></stop>
+            </linearGradient>
+          </defs>
+          <g filter="url(#wisp-blur)" fill="none" stroke="url(#wisp-fade)" stroke-linecap="round">
+            <path class="wisp wisp-one" d="M236 376 C290 340 270 292 325 255 S390 178 354 122"></path>
+            <path class="wisp wisp-two" d="M302 391 C360 351 335 307 404 281 S491 218 455 164"></path>
+            <path class="wisp wisp-three" d="M193 402 C230 362 203 331 243 301 S282 232 251 196"></path>
+            <path class="wisp wisp-four" d="M350 411 C406 375 408 337 478 318 S555 274 540 225"></path>
+          </g>
+        </svg>
         <img class="whisperer-core" src="/assets/img/whisperer-core.png" alt="">
       </div>
-
-      <aside class="status-terminal" aria-label="Observatory status">
-        <b>observatory online</b>
-        <span>Signals detected.</span>
-        <span>Three active constructions.</span>
-        <span>One unfinished experiment.</span>
-        <span>Several things worth investigating.</span>
-        <span class="cursor">&gt; _</span>
-      </aside>
     </section>
 
     <nav class="mobile-navigation" id="mobile-navigation" aria-label="Observatory destinations">
       <a href="/observations/"><i aria-hidden="true">⌁</i><span><b>observations</b><small>Watch the signals</small></span><em>›</em></a>
-      <a href="/projects/"><i aria-hidden="true">▦</i><span><b>projects</b><small>Things I'm building</small></span><em>›</em></a>
+      <a href="/projects/"><i aria-hidden="true">▦</i><span><b>projects</b><small>See what I'm building</small></span><em>›</em></a>
       <a href="/logbook/"><i aria-hidden="true">▤</i><span><b>logbook</b><small>Recent activity</small></span><em>›</em></a>
       <a href="/archive/"><i aria-hidden="true">▥</i><span><b>archive</b><small>Notes &amp; history</small></span><em>›</em></a>
       <a href="/experiments/"><i aria-hidden="true">⌂</i><span><b>experiments</b><small>Unfinished things</small></span><em>›</em></a>
@@ -71,15 +96,21 @@
   </main>
 
   <footer class="site-footer">
-    <p>© 2026 James Bregenzer</p>
-    <nav aria-label="External links">
+    <a class="footer-id" href="/">james.bregenzer.dev</a>
+    <nav class="footer-rooms" aria-label="Observatory navigation">
+      <a href="/observations/">Observations</a>
+      <a href="/projects/">Projects</a>
+      <a href="/logbook/">Logbook</a>
+      <a href="/archive/">Archive</a>
+      <a href="/experiments/">Experiments</a>
+    </nav>
+    <nav class="footer-external" aria-label="External links">
       <a href="https://github.com/jamesbregenzer">◖ GitHub</a>
       <a href="https://www.cloudflare.com/">☁ Cloudflare</a>
       <a href="https://make.wordpress.org/">ⓦ WordPress</a>
       <a href="/feed.xml">◔ RSS</a>
       <a href="mailto:james@bregenzer.dev">□ Email</a>
     </nav>
-    <p class="footer-prompt">&gt;_</p>
   </footer>
 </body>
 </html>
