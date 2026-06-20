@@ -15,18 +15,13 @@
 
   <main id="main">
     <section class="observatory-scene" aria-label="The dome observatory">
-      <img class="room-layer" src="/assets/img/room-background-phase3.webp" alt="An empty, ancient dome observatory overlooking a storm-dark city at night.">
+      <img class="room-layer" src="/assets/img/room-background-phase32.webp" alt="An empty, ancient dome observatory overlooking a storm-dark city at night.">
       <div class="window-weather" aria-hidden="true">
         <i class="cloud cloud-one"></i>
         <i class="cloud cloud-two"></i>
         <i class="distant-signal"></i>
         <i class="distant-lightning"></i>
       </div>
-      <div class="lantern-layer" aria-hidden="true">
-        <i class="wall-lantern lantern-left"></i>
-        <i class="wall-lantern lantern-right"></i>
-      </div>
-
       <header class="observatory-id">
         <a href="/">james.bregenzer.dev</a>
         <p>observatory online <i aria-hidden="true"></i></p>
@@ -34,61 +29,52 @@
 
       <nav class="scene-navigation" aria-label="Objects in the observatory">
         <a class="scene-object telescope" href="/observations/" data-object="telescope" aria-label="Observations — Watch the signals">
-          <img src="/assets/img/telescope.png" alt="">
+          <img src="/assets/img/telescope-phase32.png" alt="">
           <span class="object-label"><b>observations</b><small>Watch the signals</small></span>
         </a>
-        <a class="scene-object workbench" href="/projects/" data-object="workbench" aria-label="Projects — See what I'm building">
-          <img src="/assets/img/workbench.png" alt="">
-          <span class="object-label"><b>projects</b><small>See what I'm building</small></span>
-        </a>
-        <a class="scene-object terminal" href="/logbook/" data-object="terminal" aria-label="Logbook — Recent activity">
-          <img src="/assets/img/terminal.png" alt="">
+        <a class="scene-object workbench" href="/projects/" data-object="workbench" aria-label="Projects and Logbook workstation — See what I'm building">
+          <img src="/assets/img/workstation-phase32.png" alt="">
           <span class="terminal-screen-cursor" aria-hidden="true"></span>
-          <span class="object-label"><b>logbook</b><small>Recent activity</small></span>
+          <span class="object-label"><b>projects + logbook</b><small>Builds &amp; recent activity</small></span>
         </a>
         <a class="scene-object archive" href="/archive/" data-object="archive" aria-label="Archive — Notes and history">
-          <img src="/assets/img/archive-cabinet.png" alt="">
+          <img src="/assets/img/archive-phase32.png" alt="">
           <span class="object-label"><b>archive</b><small>Notes &amp; history</small></span>
         </a>
         <a class="scene-object door" href="/experiments/" data-object="door" aria-label="Experiments — Unfinished things">
-          <img src="/assets/img/door.png" alt="">
+          <img src="/assets/img/door-phase32.png" alt="">
           <span class="object-label"><b>experiments</b><small>Unfinished things</small></span>
         </a>
       </nav>
 
       <div class="whisperer" aria-label="The Whisperer watches from the observatory">
-        <svg class="whisperer-wisps" viewBox="0 0 900 390" preserveAspectRatio="none" aria-hidden="true">
+        <div class="smoke-plumes" aria-hidden="true">
+          <i class="smoke-plume plume-one"></i>
+          <i class="smoke-plume plume-two"></i>
+          <i class="smoke-plume plume-three"></i>
+        </div>
+        <svg class="whisperer-wisps" viewBox="0 0 520 820" preserveAspectRatio="none" aria-hidden="true">
           <defs>
             <filter id="wisp-blur" x="-35%" y="-35%" width="170%" height="170%">
-              <feGaussianBlur stdDeviation="6"></feGaussianBlur>
+              <feGaussianBlur stdDeviation="10"></feGaussianBlur>
             </filter>
-            <linearGradient id="wisp-left" x1="1" y1=".5" x2="0" y2=".5">
-              <stop offset="0" stop-color="#17191c" stop-opacity=".98"></stop>
-              <stop offset=".42" stop-color="#4d565e" stop-opacity=".76"></stop>
-              <stop offset="1" stop-color="#72808a" stop-opacity="0"></stop>
-            </linearGradient>
-            <linearGradient id="wisp-right" x1="0" y1=".5" x2="1" y2=".5">
-              <stop offset="0" stop-color="#17191c" stop-opacity=".94"></stop>
-              <stop offset=".45" stop-color="#4d565e" stop-opacity=".7"></stop>
-              <stop offset="1" stop-color="#72808a" stop-opacity="0"></stop>
+            <linearGradient id="wisp-rise" x1=".5" y1="1" x2=".5" y2="0">
+              <stop offset="0" stop-color="#050607" stop-opacity=".96"></stop>
+              <stop offset=".48" stop-color="#343b40" stop-opacity=".82"></stop>
+              <stop offset="1" stop-color="#8997a0" stop-opacity="0"></stop>
             </linearGradient>
           </defs>
-          <g filter="url(#wisp-blur)" fill="none" stroke-linecap="round">
-            <path class="wisp wisp-left-one" stroke="url(#wisp-left)" d="M458 286 C399 277 370 312 306 303 S196 267 62 300"></path>
-            <path class="wisp wisp-left-two" stroke="url(#wisp-left)" d="M451 305 C377 322 347 348 274 337 S148 323 21 354"></path>
-            <path class="wisp wisp-left-rise" stroke="url(#wisp-left)" d="M450 284 C404 258 417 224 370 205 S326 151 351 116"></path>
-            <path class="wisp wisp-right-one" stroke="url(#wisp-right)" d="M470 294 C531 274 568 315 632 302 S751 279 875 316"></path>
-            <path class="wisp wisp-right-rise" stroke="url(#wisp-right)" d="M470 282 C513 252 491 219 530 190 S574 131 551 96"></path>
+          <g filter="url(#wisp-blur)" fill="none" stroke="url(#wisp-rise)" stroke-linecap="round">
+            <path class="wisp wisp-one" d="M238 744 C184 664 253 619 205 550 S184 417 238 350 S278 218 229 112"></path>
+            <path class="wisp wisp-two" d="M310 755 C371 672 299 619 354 530 S365 381 308 303 S292 172 354 54"></path>
+            <path class="wisp wisp-three" d="M170 735 C117 660 159 592 117 528 S105 397 160 334 S180 215 139 134"></path>
           </g>
           <g class="wisp-detail" fill="none" stroke-linecap="round">
-            <path class="wisp-left-one" stroke="url(#wisp-left)" d="M456 288 C421 270 404 298 374 284 S326 270 289 291 S219 306 170 282"></path>
-            <path class="wisp-left-two" stroke="url(#wisp-left)" d="M453 302 C401 325 367 311 325 335 S229 350 139 329"></path>
-            <path class="wisp-left-rise" stroke="url(#wisp-left)" d="M452 283 C429 254 446 232 419 210 S397 164 410 140"></path>
-            <path class="wisp-right-one" stroke="url(#wisp-right)" d="M470 298 C510 319 537 288 574 310 S643 337 704 310"></path>
-            <path class="wisp-right-rise" stroke="url(#wisp-right)" d="M469 283 C493 256 480 237 505 215 S535 170 523 146"></path>
+            <path class="wisp-one" stroke="url(#wisp-rise)" d="M242 744 C210 669 274 625 239 551 S225 426 263 357 S292 239 267 152"></path>
+            <path class="wisp-two" stroke="url(#wisp-rise)" d="M306 754 C340 683 285 626 326 551 S337 408 301 335 S300 223 327 143"></path>
           </g>
         </svg>
-        <img class="whisperer-core" src="/assets/img/whisperer-core.png" alt="">
+        <img class="whisperer-core" src="/assets/img/whisperer-phase32.png" alt="">
       </div>
     </section>
 
