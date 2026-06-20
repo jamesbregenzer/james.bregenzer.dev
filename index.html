@@ -7,7 +7,7 @@
   <meta name="description" content="James Bregenzer's observatory: projects, signals, activity, notes, and unfinished experiments.">
   <title>james.bregenzer.dev — observatory online</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/styles.css?v=phase32-align">
   <script src="/assets/script.js" defer></script>
 </head>
 <body class="home">
@@ -32,10 +32,13 @@
           <img src="/assets/img/telescope-phase32.png" alt="">
           <span class="object-label"><b>observations</b><small>Watch the signals</small></span>
         </a>
-        <a class="scene-object workbench" href="/projects/" data-object="workbench" aria-label="Projects and Logbook workstation — See what I'm building">
-          <img src="/assets/img/workstation-phase32.png" alt="">
+        <a class="scene-object workbench" href="/projects/" data-object="workbench" aria-label="Projects — See what I'm building">
+          <img src="/assets/img/workstation-proof-v2.png" alt="">
+          <span class="object-label"><b>projects</b><small>See what I'm building</small></span>
+        </a>
+        <a class="scene-object terminal-link" href="/logbook/" data-object="terminal" aria-label="Logbook — Recent activity">
           <span class="terminal-screen-cursor" aria-hidden="true"></span>
-          <span class="object-label"><b>projects + logbook</b><small>Builds &amp; recent activity</small></span>
+          <span class="object-label"><b>logbook</b><small>Recent activity</small></span>
         </a>
         <a class="scene-object archive" href="/archive/" data-object="archive" aria-label="Archive — Notes and history">
           <img src="/assets/img/archive-phase32.png" alt="">
@@ -59,9 +62,9 @@
               <feGaussianBlur stdDeviation="7"></feGaussianBlur>
             </filter>
             <linearGradient id="wisp-rise" x1=".5" y1="1" x2=".5" y2="0">
-              <stop offset="0" stop-color="#050607" stop-opacity=".96"></stop>
-              <stop offset=".48" stop-color="#465058" stop-opacity=".84"></stop>
-              <stop offset="1" stop-color="#8997a0" stop-opacity="0"></stop>
+              <stop offset="0" stop-color="#080a0b" stop-opacity=".94"></stop>
+              <stop offset=".48" stop-color="#66727a" stop-opacity=".82"></stop>
+              <stop offset="1" stop-color="#8a969e" stop-opacity="0"></stop>
             </linearGradient>
           </defs>
           <g filter="url(#wisp-blur)" fill="none" stroke="url(#wisp-rise)" stroke-linecap="round">

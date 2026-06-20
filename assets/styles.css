@@ -48,7 +48,7 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
   position: relative;
   width: 100%;
   min-height: 560px;
-  height: calc(100vh - 30px);
+  height: 90vh;
   overflow: hidden;
   isolation: isolate;
   background: #050708;
@@ -228,9 +228,9 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
 }
 
 .telescope {
-  left: 34%;
-  bottom: 0;
-  width: 17.25%;
+  left: 35.5%;
+  bottom: 28%;
+  width: 10.7%;
   z-index: 9;
 }
 .telescope:not(:hover):not(:focus-visible) img {
@@ -241,8 +241,8 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
 
 .workbench {
   left: 0;
-  bottom: -1%;
-  width: 45%;
+  bottom: 10%;
+  width: 36.5%;
   z-index: 12;
 }
 .workbench .object-label { left: 12%; top: 5%; }
@@ -265,10 +265,10 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
   content: "";
   position: absolute;
   z-index: 2;
-  left: 57%;
+  left: 17%;
   top: 8%;
   width: 17%;
-  height: 24%;
+  height: 25%;
   border-radius: 7%;
   background: rgba(96, 190, 74, .1);
   filter: blur(10px);
@@ -278,21 +278,47 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
 .terminal-screen-cursor {
   position: absolute;
   z-index: 4;
-  left: 61%;
-  top: 27%;
-  width: 2.3%;
-  height: .65%;
+  left: 68%;
+  top: 38%;
+  width: 10%;
+  height: 2%;
   background: rgba(176, 255, 152, .86);
   box-shadow: 0 0 4px rgba(131, 237, 105, .54);
   animation: cursor 1.15s step-end infinite;
   pointer-events: none;
 }
+.terminal-link {
+  left: 15.2%;
+  bottom: 34.5%;
+  z-index: 14;
+  width: 8%;
+  aspect-ratio: 1.05;
+  border-radius: 7%;
+}
+.terminal-link::after {
+  inset: 4%;
+  opacity: .018;
+  border-radius: 8%;
+  background: #79d467;
+  filter: blur(12px);
+}
+.terminal-link:hover::after,
+.terminal-link:focus-visible::after {
+  opacity: .2;
+  transform: scale(1.04);
+}
+.terminal-link:focus-visible {
+  outline: 1px solid rgba(161, 240, 139, .72);
+  outline-offset: 3px;
+}
+.terminal-link .object-label { left: 105%; top: 4%; }
+.terminal-link .object-label::after { right: 100%; top: 58%; width: 20px; }
 
 .archive {
-  right: 11%;
-  bottom: 7%;
+  right: 14.5%;
+  bottom: 23%;
   top: auto;
-  width: 12%;
+  width: 10.8%;
   z-index: 11;
 }
 .archive::before {
@@ -317,11 +343,11 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
 .archive .object-label::after { left: 100%; top: 58%; width: 27px; }
 
 .door {
-  right: .5%;
-  top: 15%;
+  right: 1%;
+  top: 13%;
   bottom: auto;
   width: 11%;
-  height: 72%;
+  height: 64%;
 }
 .door img { height: 100%; object-fit: fill; }
 .door .object-label { right: 85%; top: 28%; }
@@ -330,8 +356,8 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
 .whisperer {
   position: absolute;
   z-index: 11;
-  right: 27%;
-  bottom: 0;
+  right: 30.5%;
+  bottom: 16%;
   width: 15%;
   aspect-ratio: .62;
   pointer-events: none;
@@ -358,10 +384,10 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
 .smoke-plumes {
   position: absolute;
   z-index: 1;
-  left: -5%;
-  top: -112%;
-  width: 110%;
-  height: 210%;
+  left: 10%;
+  top: -92%;
+  width: 82%;
+  height: 185%;
   pointer-events: none;
 }
 .smoke-plume {
@@ -394,29 +420,29 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
 .whisperer-wisps {
   position: absolute;
   z-index: 1;
-  left: -28%;
-  top: -112%;
-  width: 160%;
-  height: 225%;
+  left: -22%;
+  top: -58%;
+  width: 150%;
+  height: 170%;
   overflow: visible;
-  opacity: .76;
+  opacity: .96;
   mix-blend-mode: normal;
   filter: drop-shadow(0 0 8px rgba(80, 90, 98, .18));
 }
-.wisp { stroke-width: 12; transform-box: fill-box; transform-origin: 50% 90%; }
+.wisp { stroke-width: 18; transform-box: fill-box; transform-origin: 50% 90%; }
 .wisp-one { animation: wisp-rise 23s ease-in-out infinite; }
-.wisp-two { stroke-width: 10; opacity: .82; animation: wisp-rise 17s ease-in-out -7s infinite reverse; }
-.wisp-three { stroke-width: 8; opacity: .7; animation: wisp-rise 19s ease-in-out -11s infinite; }
-.wisp-detail { opacity: .78; filter: blur(.4px); }
+.wisp-two { stroke-width: 14; opacity: .78; animation: wisp-rise 29s ease-in-out -11s infinite reverse; }
+.wisp-three { stroke-width: 11; opacity: .66; animation: wisp-rise 31s ease-in-out -17s infinite; }
+.wisp-detail { opacity: .64; filter: blur(.6px); }
 .wisp-detail path { stroke-width: 4; }
 
 .site-footer {
-  min-height: 30px;
+  min-height: 10vh;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 24px;
-  padding: 2px 24px;
+  padding: 8px 38px;
   color: #737c75;
   border-top: 1px solid rgba(84, 127, 77, .13);
   background: #030504;
@@ -539,12 +565,12 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
   50% { transform: translate3d(15px, -7px, 0) scaleX(1.05); opacity: .64; }
 }
 @keyframes smoke-column {
-  0%, 100% { transform: translate3d(0, 8px, 0) scale(.94) rotate(-1deg); opacity: .7; }
-  50% { transform: translate3d(8px, -24px, 0) scale(1.08) rotate(2deg); opacity: 1; }
+  0%, 100% { transform: translate3d(0, 8px, 0) scale(.94) rotate(-1deg); opacity: .04; }
+  50% { transform: translate3d(8px, -24px, 0) scale(1.08) rotate(2deg); opacity: .1; }
 }
 @keyframes smoke-plume {
-  0%, 100% { transform: translate3d(0, 12px, 0) scale(.9) rotate(-2deg); opacity: .54; }
-  48% { transform: translate3d(12px, -30px, 0) scale(1.09) rotate(3deg); opacity: .92; }
+  0%, 100% { transform: translate3d(0, 12px, 0) scale(.9) rotate(-2deg); opacity: .08; }
+  48% { transform: translate3d(12px, -30px, 0) scale(1.09) rotate(3deg); opacity: .18; }
 }
 @keyframes object-pulse { 50% { filter: brightness(1.12) drop-shadow(0 0 12px rgba(124, 255, 101, .34)); } }
 
@@ -566,6 +592,7 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
   .observatory-id a { font-size: 11px; }
   .observatory-id p { font-size: 7px; }
   .scene-object { pointer-events: none; }
+  .terminal-link { display: none; }
   .object-label { display: none; }
   .telescope { left: 32%; bottom: 0; width: 18.4%; }
   .workbench { left: -2%; bottom: -1%; width: 49%; }
