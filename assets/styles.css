@@ -594,8 +594,17 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
   .scene-object { pointer-events: none; }
   .terminal-link { display: none; }
   .object-label { display: none; }
-  .telescope { left: 32%; bottom: 0; width: 18.4%; }
-  .workbench { left: -2%; bottom: -1%; width: 49%; }
+  .telescope {
+    left: 41%;
+    bottom: 18%;
+    width: 15%;
+    z-index: 13;
+  }
+  .workbench {
+    left: -2%;
+    bottom: -1%;
+    width: 42%;
+  }
   .archive { right: 10%; bottom: 6%; top: auto; width: 13%; }
   .door { right: 0; top: 15%; bottom: auto; width: 12%; height: 72%; }
   .whisperer { right: 25%; bottom: 0; width: 16.25%; }
@@ -647,8 +656,17 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
   }
   .window-weather { left: 13%; width: 74%; }
   .scene-object img { filter: brightness(.68) saturate(.69) drop-shadow(0 5px 5px rgba(0, 0, 0, .61)); }
-  .telescope { left: 25%; bottom: 0; width: 25.3%; }
-  .workbench { left: -13%; bottom: 0; width: 62%; }
+  .telescope {
+    left: 34%;
+    bottom: 19%;
+    width: 20%;
+    z-index: 13;
+  }
+  .workbench {
+    left: -10%;
+    bottom: -2%;
+    width: 49%;
+  }
   .archive,
   .door { display: none; }
   .whisperer { right: 12%; bottom: 0; width: 23.4%; }
