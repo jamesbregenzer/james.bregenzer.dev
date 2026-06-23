@@ -38,7 +38,7 @@ inside the shell. The Projects implementation uses:
 1. `.projects-frame` for the bordered observatory surface.
 2. `.projects-intro` for breadcrumbs, title, telemetry, subtitle, and header art.
 3. `.projects-workspace` for the atmospheric artwork and record list.
-4. `.project-list` for data-rendered archive entries.
+4. `.project-list` for text-first, data-rendered archive entries.
 
 Desktop interiors reserve meaningful space for artwork. Mobile layouts move
 the artwork above the records and reduce its contrast rather than removing it.
@@ -47,22 +47,20 @@ the artwork above the records and reduce its contrast rather than removing it.
 
 Projects are archive records, not cards. `assets/projects.js` reads
 `content/projects/projects.json` and renders one `.project-record` per project
-with a glyph, title, compact status, description, technology tags, and a
-right-aligned action. Records use horizontal separators and share one continuous
-surface. Do not add screenshots, preview thumbnails, or independent card
-backgrounds.
+with a title, compact status, description, technology tags, and a right-aligned
+action. Project icons, screenshots, preview thumbnails, and independent card
+backgrounds are intentionally excluded.
 
-Supported status treatments are Active, Maintained, and In Progress. New glyphs
-are inline SVG definitions in `assets/projects.js` so they remain crisp and use
-the current page color.
+Supported status treatments are Active, Maintained, and In Progress.
 
 ## Footer conventions
 
 Every page mounts the exact same footer component from `assets/footer.js`.
 Do not duplicate footer markup in page templates. The footer always contains
-the five observatory destinations and the protocol label; active-page state is
-derived from `window.location.pathname`. Height, spacing, typography, borders,
-and responsive behavior are defined once in `assets/styles.css`.
+the five observatory destinations, site identity, external links, and protocol
+label; active-page state is derived from `window.location.pathname`. Navigation
+items contain only an icon and label. Height, spacing, typography, borders, and
+responsive behavior are defined once in `assets/styles.css`.
 
 ## Artwork usage
 
@@ -81,14 +79,14 @@ Breadcrumbs appear first on every interior page. Use small uppercase text,
 muted observatory green, and the single `›` separator with consistent spacing.
 Include the current page as the final segment with `aria-current="page"`.
 
-Example: `OBSERVATORY › WORKBENCH › PROJECTS`
+The Projects page uses: `OBSERVATORY › PROJECTS`
 
 ## Project data workflow
 
 The project list is intentionally data-driven and build-free:
 
 1. Edit `content/projects/projects.json`.
-2. Set `title`, `slug`, `status`, `order`, `description`, `tags`, and `icon`.
+2. Set `title`, `slug`, `status`, `order`, `description`, and `tags`.
 3. Add `url` only when the View Project action should bypass the local detail
    route.
 4. Add or update the matching markdown source under `content/projects/` when a
@@ -108,10 +106,6 @@ with these required fields:
 - `order`
 - `description`
 - `tags`
-- `icon`
-
-Supported starter icon names are `radar`, `audit`, and `reviews`; add additional inline
-SVG icon definitions in `assets/projects.js` when introducing a new icon.
 
 Create a matching markdown file at `content/projects/{slug}.md` using the same
 frontmatter. The markdown files are the future source for longer project
