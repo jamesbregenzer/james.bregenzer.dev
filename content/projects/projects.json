@@ -1,0 +1,22 @@
+[
+  {
+    "title": "WP Core Radar",
+    "slug": "wp-core-radar",
+    "status": "Active",
+    "order": 10,
+    "description": "Automated discovery and scoring of WordPress Core contribution opportunities.",
+    "tags": ["Python", "GitHub Actions", "Cloudflare", "WordPress"],
+    "icon": "radar",
+    "featured": true
+  },
+  {
+    "title": "LocalReviews",
+    "slug": "localreviews",
+    "status": "Maintained",
+    "order": 20,
+    "description": "Local review aggregation and practical reputation insights for businesses.",
+    "tags": ["TypeScript", "Cloudflare", "PostgreSQL", "Maps API"],
+    "icon": "reviews",
+    "featured": true
+  }
+]
