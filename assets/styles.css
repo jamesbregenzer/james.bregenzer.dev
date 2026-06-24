@@ -2154,3 +2154,50 @@ body.terminal-open { overflow: hidden; }
     width: 38%;
   }
 }
+
+/* Phase 5 final desktop composition polish.
+   Desktop-only object refinements to match approved visual spec.
+   Mobile composition remains unchanged below 900px. */
+@media (min-width: 901px) {
+  .home .telescope {
+    left: 41.2%;
+    bottom: 31%;
+    width: 13.7%;
+    z-index: 15;
+  }
+
+  .home .keeper {
+    left: 55.3%;
+    bottom: 22.5%;
+    width: 14.4%;
+    z-index: 12;
+  }
+
+  .home .archive {
+    right: 13.3%;
+    bottom: 18.8%;
+    width: 8.8%;
+    z-index: 11;
+  }
+
+  .home .door {
+    right: 1.1%;
+    top: 13%;
+    width: 10.6%;
+    height: 68%;
+  }
+
+  .home .workbench::before {
+    right: 22%;
+    top: 19%;
+    width: 8.5%;
+    height: 13%;
+  }
+
+  .home .workbench::after {
+    left: 41%;
+    top: 20%;
+    width: 10.5%;
+    height: 15%;
+  }
+}
