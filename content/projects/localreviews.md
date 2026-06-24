@@ -1,6 +1,7 @@
 ---
 title: "LocalReviews"
 slug: "localreviews"
+url: "https://localrevie.ws/"
 status: "Maintained"
 order: 20
 description: "Local review aggregation and practical reputation insights for businesses."

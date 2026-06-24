@@ -1,6 +1,7 @@
 ---
 title: "WP Core Radar"
 slug: "wp-core-radar"
+url: "https://radar.james.bregenzer.dev/"
 status: "Active"
 order: 10
 description: "Automated discovery and scoring of WordPress Core contribution opportunities."

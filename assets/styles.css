@@ -1692,3 +1692,399 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
     transition-duration: .01ms !important;
   }
 }
+
+/* Phase 5 — Keeper scene, terminal navigation, and projects shell */
+body.terminal-open { overflow: hidden; }
+
+.terminal-toggle {
+  position: fixed;
+  z-index: 220;
+  top: 25px;
+  right: 28px;
+  display: grid;
+  width: 42px;
+  height: 38px;
+  padding: 9px 8px;
+  border: 0;
+  background: rgba(2, 6, 4, .24);
+  place-content: space-between;
+  cursor: pointer;
+}
+.terminal-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #9dd77d;
+  box-shadow: 0 0 8px rgba(130, 221, 101, .14);
+  transition: transform .24s ease, opacity .2s ease;
+}
+.terminal-toggle:hover span,
+.terminal-toggle:focus-visible span { background: var(--green-bright); }
+.terminal-toggle:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 3px; }
+.terminal-open .terminal-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.terminal-open .terminal-toggle span:nth-child(2) { opacity: 0; }
+.terminal-open .terminal-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.terminal-backdrop {
+  position: fixed;
+  z-index: 190;
+  inset: 0;
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(0, 2, 1, .58);
+  backdrop-filter: brightness(.55);
+  transition: opacity .28s ease, visibility 0s linear .28s;
+}
+.terminal-panel {
+  position: fixed;
+  z-index: 210;
+  inset: 0 0 0 auto;
+  display: grid;
+  width: min(370px, 42vw);
+  padding: 32px 38px 46px;
+  border-left: 1px solid rgba(121, 166, 93, .48);
+  background:
+    repeating-linear-gradient(0deg, transparent 0 5px, rgba(149, 220, 119, .018) 6px),
+    radial-gradient(ellipse at 50% 35%, rgba(37, 70, 42, .08), transparent 53%),
+    rgba(2, 6, 4, .97);
+  box-shadow: -28px 0 70px rgba(0, 0, 0, .48);
+  transform: translateX(102%);
+  transition: transform .32s ease;
+}
+.terminal-open .terminal-backdrop {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+.terminal-open .terminal-panel { transform: translateX(0); }
+.terminal-brand {
+  align-self: start;
+  color: #92c978;
+  font-size: 13px;
+}
+.terminal-panel nav {
+  display: grid;
+  align-self: center;
+  gap: clamp(25px, 5vh, 48px);
+}
+.terminal-panel nav a {
+  width: fit-content;
+  color: #8fbe75;
+  font-size: clamp(17px, 2vw, 22px);
+  letter-spacing: .025em;
+  text-transform: uppercase;
+}
+.terminal-panel nav a:hover,
+.terminal-panel nav a:focus-visible {
+  color: var(--green-bright);
+  text-shadow: 0 0 12px rgba(141, 226, 115, .25);
+}
+.terminal-panel > p {
+  align-self: end;
+  margin: 0;
+  color: #64865a;
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.terminal-panel > p span { color: #a4df84; }
+
+.home .observatory-scene {
+  height: 100vh;
+  min-height: 600px;
+  border: 0;
+}
+.home .room-layer {
+  filter: brightness(.77) saturate(.76) contrast(1.08);
+}
+.home .observatory-scene::before {
+  background:
+    radial-gradient(ellipse at 52% 43%, transparent 28%, rgba(0, 0, 0, .08) 68%, rgba(0, 0, 0, .52) 110%),
+    linear-gradient(0deg, rgba(0, 0, 0, .25), transparent 31% 83%, rgba(0, 0, 0, .21));
+}
+.home .observatory-id {
+  top: 29px;
+  left: 34px;
+}
+.home .observatory-id a { font-size: 14px; }
+.home .observatory-id p { display: none; }
+.home .workbench {
+  left: 0;
+  bottom: 0;
+  width: 38%;
+}
+.home .workbench::before {
+  right: 22%;
+  top: 9%;
+  width: 10%;
+  height: 18%;
+}
+.home .telescope {
+  left: 42%;
+  bottom: 12%;
+  width: 13%;
+  z-index: 15;
+}
+.home .archive {
+  right: 14.5%;
+  bottom: 7%;
+  width: 10.5%;
+}
+.home .door {
+  right: 1.3%;
+  top: 13%;
+  width: 10.5%;
+  height: 67%;
+}
+.home .keeper {
+  position: absolute;
+  z-index: 12;
+  left: 51%;
+  bottom: 2%;
+  width: 24%;
+  aspect-ratio: .563;
+  pointer-events: none;
+}
+.keeper-core {
+  position: absolute;
+  z-index: 2;
+  inset: auto 0 0;
+  width: 100%;
+  height: auto;
+  filter: brightness(.63) saturate(.63) drop-shadow(0 18px 18px rgba(0, 0, 0, .75));
+}
+.keeper .smoke-plumes {
+  left: 28%;
+  top: -41%;
+  width: 54%;
+  height: 92%;
+}
+.keeper .smoke-plume {
+  opacity: .055;
+  filter: blur(13px);
+}
+.home .mobile-navigation,
+.home > .site-footer { display: none !important; }
+
+.interior {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(2, 5, 3, .86), rgba(1, 3, 2, .96)),
+    url("/assets/img/room-background-phase5.webp") center / cover fixed no-repeat;
+}
+.interior-shell { min-height: 100vh; }
+.interior > .site-footer { display: none !important; }
+
+.projects-page .projects-shell {
+  min-height: 100vh;
+  padding: 18px;
+}
+.projects-page .projects-frame {
+  position: relative;
+  width: min(1120px, 100%);
+  min-height: calc(100vh - 36px);
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse at 70% 56%, rgba(42, 68, 40, .08), transparent 38%),
+    rgba(2, 6, 4, .93);
+}
+.projects-page .projects-intro {
+  min-height: 172px;
+  padding: 29px 31px 25px;
+  border: 0;
+}
+.projects-page .projects-intro::after {
+  background: linear-gradient(90deg, rgba(2, 6, 4, .98) 0 47%, rgba(2, 6, 4, .63) 72%, rgba(2, 6, 4, .18));
+}
+.projects-page .projects-intro .breadcrumbs {
+  margin-bottom: 23px;
+  font-size: 10px;
+}
+.projects-page .projects-title-row { width: min(550px, 70%); }
+.projects-page .projects-intro h1 { font-size: clamp(43px, 4.5vw, 58px); }
+.projects-page .projects-intro > p { margin-top: 13px; font-size: 12px; }
+.projects-page .projects-observatory {
+  width: 50%;
+  opacity: .64;
+}
+.projects-page .projects-workspace {
+  position: relative;
+  display: block;
+  height: auto;
+  min-height: 0;
+  padding: 0 30px 28px;
+}
+.projects-page .projects-atmosphere {
+  position: absolute;
+  z-index: 0;
+  inset: -115px 10% 0 auto;
+  width: 43%;
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
+  opacity: .25;
+  mask-image:
+    linear-gradient(90deg, transparent 0, #000 30% 71%, transparent 100%),
+    linear-gradient(0deg, transparent 0, #000 19% 77%, transparent 100%);
+  mask-composite: intersect;
+}
+.projects-page .projects-atmosphere::after { display: none; }
+.projects-page .projects-atmosphere img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: 50% 30%;
+  filter: brightness(.66) saturate(.6) contrast(1.07);
+}
+.projects-page .project-list {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  background: none;
+}
+.projects-page .project-record {
+  grid-template-columns: 108px minmax(0, 1fr) 132px;
+  gap: 20px;
+  min-height: 134px;
+  padding: 12px 16px 12px 10px;
+  border: 1px solid rgba(112, 146, 82, .3);
+  border-radius: 7px;
+  background: rgba(3, 8, 5, .61);
+}
+.projects-page .project-record:last-child { border-bottom: 1px solid rgba(112, 146, 82, .3); }
+.projects-page .project-glyph {
+  width: 92px;
+  height: 106px;
+  color: #86ae6d;
+  background: rgba(2, 6, 4, .62);
+}
+.projects-page .project-glyph svg {
+  width: 70px;
+  height: 70px;
+}
+.projects-page .project-heading h2 {
+  font-size: 20px;
+}
+.projects-page .project-record-body > p {
+  max-width: 520px;
+  font-size: 10px;
+  line-height: 1.55;
+}
+.projects-page .project-tags li {
+  padding: 3px 8px;
+  font-size: 8px;
+}
+.projects-page .project-link {
+  font-size: 9px;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .terminal-toggle { top: 15px; right: 15px; }
+  .terminal-panel {
+    width: min(360px, 82vw);
+    padding: 25px 28px 38px;
+  }
+  .home .observatory-scene {
+    height: 100svh;
+    min-height: 600px;
+    aspect-ratio: auto;
+  }
+  .home .room-layer {
+    width: 115%;
+    left: -7.5%;
+    object-position: center;
+  }
+  .home .observatory-id { top: 17px; left: 17px; }
+  .home .workbench { left: -4%; bottom: -1%; width: 43%; }
+  .home .telescope { left: 39%; bottom: 11%; width: 16%; }
+  .home .keeper { left: 52%; bottom: 0; width: 25%; }
+  .home .archive { right: 10%; bottom: 4%; width: 12%; }
+  .home .door { right: -1%; top: 13%; width: 12%; height: 72%; }
+  .projects-page .projects-frame { min-height: calc(100vh - 16px); }
+  .projects-page .projects-intro { padding-right: 72px; }
+  .projects-page .projects-workspace { padding: 0 15px 20px; }
+  .projects-page .projects-atmosphere {
+    inset: -90px 0 0 auto;
+    width: 61%;
+    height: 100%;
+    opacity: .16;
+  }
+  .projects-page .project-record {
+    grid-template-columns: 82px minmax(0, 1fr) 105px;
+    min-height: 120px;
+    gap: 13px;
+    padding: 10px;
+  }
+  .projects-page .project-glyph { width: 72px; height: 86px; }
+  .projects-page .project-glyph svg { width: 56px; height: 56px; }
+}
+
+@media (max-width: 600px) {
+  .terminal-panel { width: 88vw; }
+  .terminal-panel nav { gap: 29px; }
+  .terminal-panel nav a { font-size: 17px; }
+  .home .observatory-scene {
+    height: 100svh;
+    min-height: 620px;
+    aspect-ratio: auto;
+  }
+  .home .room-layer {
+    width: 160%;
+    left: -30%;
+  }
+  .home .workbench { left: -16%; width: 63%; }
+  .home .telescope { left: 35%; bottom: 14%; width: 24%; }
+  .home .keeper { left: 53%; width: 36%; }
+  .home .archive,
+  .home .door { display: none; }
+  .projects-page .projects-shell { padding: 8px; }
+  .projects-page .projects-intro {
+    min-height: 150px;
+    padding: 22px 58px 18px 16px;
+  }
+  .projects-page .projects-intro .breadcrumbs {
+    width: auto;
+    margin-bottom: 19px;
+    font-size: 8px;
+  }
+  .projects-page .projects-title-row { width: 100%; }
+  .projects-page .projects-intro h1 { font-size: 34px; }
+  .projects-page .projects-intro > p { font-size: 9px; }
+  .projects-page .projects-observatory {
+    width: 58%;
+    height: 72px;
+  }
+  .projects-page .projects-atmosphere {
+    inset: -52px -8% 0 auto;
+    width: 80%;
+    opacity: .11;
+  }
+  .projects-page .project-record {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 10px;
+    min-height: 0;
+    padding: 10px;
+  }
+  .projects-page .project-glyph {
+    width: 54px;
+    height: 64px;
+  }
+  .projects-page .project-glyph svg { width: 43px; height: 43px; }
+  .projects-page .project-heading { gap: 7px; }
+  .projects-page .project-heading h2 { font-size: 14px; }
+  .projects-page .project-status { padding: 2px 6px; font-size: 7px; }
+  .projects-page .project-record-body > p { font-size: 8px; }
+  .projects-page .project-tags { gap: 4px; }
+  .projects-page .project-tags li { padding: 2px 5px; font-size: 7px; }
+  .projects-page .project-link {
+    grid-column: 2;
+    justify-self: end;
+    min-height: 24px;
+    padding: 5px 0 0;
+    font-size: 8px;
+  }
+}

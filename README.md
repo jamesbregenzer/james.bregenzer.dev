@@ -2,19 +2,20 @@
 
 An atmospheric, layered internet observatory for James Bregenzer.
 
-The site is intentionally dependency-free. The homepage uses an empty-room
-background plus separate transparent assets for every navigation object and the
-Whisperer. Smoke, weather, lantern light, and terminal activity are generated
-as separate HTML/CSS/SVG effect layers. Labels are discovered on hover or
-keyboard focus on desktop; mobile uses a clear stacked navigation list.
+The site is intentionally dependency-free. The homepage uses a clean empty-room
+background plus separate transparent assets for every interactive object and
+the standing Keeper. Smoke, weather, lantern light, and terminal activity are
+generated as separate HTML/CSS effect layers. Object labels are discovered on
+hover or keyboard focus on desktop.
 
 Foreground artwork is stored as high-resolution transparent PNG layers under
 `assets/img/`; the room uses an optimized WebP layer. The room and objects
 remain fixed while only restrained ambient effects animate.
 
-Interior pages use the same observatory palette, compact site-wide footer, and
-breadcrumb system. The Projects page renders archive-style records from local
-structured content without a framework or build step.
+All pages use the same hamburger-triggered terminal navigation. The homepage is
+a full-screen observatory without footer navigation. Interior pages use the
+same palette, menu, and breadcrumb system. Projects renders archive-style
+records from local structured content without a framework or build step.
 
 ## Observatory design system
 
@@ -32,35 +33,34 @@ base typography live at the top of `assets/styles.css`.
 ## Interior page architecture
 
 Interior pages use `body.interior`, an `.interior-shell`, and the shared
-`data-site-footer` mount. Each page supplies one focused content composition
-inside the shell. The Projects implementation uses:
+`assets/navigation.js` terminal menu. Each page supplies one focused content
+composition inside the shell. The Projects implementation uses:
 
 1. `.projects-frame` for the bordered observatory surface.
 2. `.projects-intro` for breadcrumbs, title, telemetry, subtitle, and header art.
 3. `.projects-workspace` for the atmospheric artwork and record list.
 4. `.project-list` for text-first, data-rendered archive entries.
 
-Desktop interiors reserve meaningful space for artwork. Mobile layouts move
-the artwork above the records and reduce its contrast rather than removing it.
+The Keeper artwork is decorative and faded behind the records. Mobile reduces
+its visual weight so it does not push project content down.
 
 ## Project record architecture
 
 Projects are archive records, not cards. `assets/projects.js` reads
 `content/projects/projects.json` and renders one `.project-record` per project
-with a title, compact status, description, technology tags, and a right-aligned
-action. Project icons, screenshots, preview thumbnails, and independent card
-backgrounds are intentionally excluded.
+with a custom inline SVG icon, title, compact status, description, technology
+tags, and a right-aligned external action. Screenshots and preview thumbnails
+are intentionally excluded.
 
 Supported status treatments are Active, Maintained, and In Progress.
 
-## Footer conventions
+## Navigation conventions
 
-Every page mounts the exact same footer component from `assets/footer.js`.
-Do not duplicate footer markup in page templates. The footer always contains
-the five observatory destinations, site identity, external links, and protocol
-label; active-page state is derived from `window.location.pathname`. Navigation
-items contain only an icon and label. Height, spacing, typography, borders, and
-responsive behavior are defined once in `assets/styles.css`.
+Every page loads `assets/navigation.js`. It injects one keyboard-accessible
+hamburger and terminal panel containing Observations, Projects, Logbook,
+Archive, and Experiments. Escape and outside clicks close the panel, focus is
+trapped while open, and body scrolling is locked. Do not add page-level footer
+navigation or duplicate menu markup.
 
 ## Artwork usage
 
@@ -70,8 +70,11 @@ as a standalone rectangle. Artwork is decorative unless it communicates unique
 content, in which case provide meaningful alternative text. Keep visual effects
 subtle and honor `prefers-reduced-motion`.
 
-The Projects page uses `projects-researcher.webp` for the left workbench scene
-and `projects-observatory.webp` for the upper-right observatory structure.
+The homepage uses `room-background-phase5.webp`, an empty architectural layer
+with a plain right wall, plus separate desk, telescope, archive, door, and
+`keeper-standing-phase5.webp` foreground layers. The Projects page uses
+`projects-researcher.webp` as faded decorative context and
+`projects-observatory.webp` in the header.
 
 ## Breadcrumb standards
 
@@ -79,21 +82,18 @@ Breadcrumbs appear first on every interior page. Use small uppercase text,
 muted observatory green, and the single `›` separator with consistent spacing.
 Include the current page as the final segment with `aria-current="page"`.
 
-The Projects page uses: `OBSERVATORY › PROJECTS`
+The Projects page uses: `OBSERVATORY › WORKBENCH`
 
 ## Project data workflow
 
 The project list is intentionally data-driven and build-free:
 
 1. Edit `content/projects/projects.json`.
-2. Set `title`, `slug`, `status`, `order`, `description`, and `tags`.
-3. Add `url` only when the View Project action should bypass the local detail
-   route.
+2. Set `title`, `slug`, `status`, `order`, `description`, `tags`, and `icon`.
+3. Set `url` or `repo` to the external destination used by Open Project.
 4. Add or update the matching markdown source under `content/projects/` when a
    longer project record exists.
-5. Add a local detail page under `projects/{slug}/index.html` when the project
-   should remain inside the observatory.
-6. Preview at desktop and mobile widths before publishing.
+5. Preview at desktop and mobile widths before publishing.
 
 ## Adding a project
 
@@ -106,14 +106,16 @@ with these required fields:
 - `order`
 - `description`
 - `tags`
+- `icon`
+- `url` or `repo`
 
 Create a matching markdown file at `content/projects/{slug}.md` using the same
 frontmatter. The markdown files are the future source for longer project
 details, while the JSON file provides no-build listing data to the browser.
 
-If the project has a detail page, add it at `projects/{slug}/index.html`. The
-current static architecture intentionally avoids runtime markdown parsing and
-keeps Cloudflare Pages deployment build-free.
+Project records should link directly to the live tool, project homepage, or
+repository. The current static architecture intentionally avoids runtime
+markdown parsing and keeps Cloudflare Pages deployment build-free.
 
 ## Local preview
 

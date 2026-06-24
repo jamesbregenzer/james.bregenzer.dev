@@ -2,6 +2,7 @@
   {
     "title": "WP Core Radar",
     "slug": "wp-core-radar",
+    "url": "https://radar.james.bregenzer.dev/",
     "status": "Active",
     "order": 10,
     "description": "Automated discovery and scoring of WordPress Core contribution opportunities.",
@@ -23,6 +24,7 @@
   {
     "title": "LocalReviews",
     "slug": "localreviews",
+    "url": "https://localrevie.ws/",
     "status": "Maintained",
     "order": 30,
     "description": "Local review aggregation and practical reputation insights for businesses.",
