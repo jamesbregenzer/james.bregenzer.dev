@@ -48,9 +48,9 @@ its visual weight so it does not push project content down.
 
 Projects are archive records, not cards. `assets/projects.js` reads
 `content/projects/projects.json` and renders one `.project-record` per project
-with a custom inline SVG icon, title, compact status, description, technology
-tags, and a right-aligned external action. Screenshots and preview thumbnails
-are intentionally excluded.
+with a title, compact status, description, technology tags, and a right-aligned
+external action. Project-list icons, screenshots, and preview thumbnails are
+intentionally excluded.
 
 Supported status treatments are Active, Maintained, and In Progress.
 

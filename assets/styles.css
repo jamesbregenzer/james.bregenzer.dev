@@ -1809,9 +1809,9 @@ body.terminal-open { overflow: hidden; }
 .home .observatory-id a { font-size: 14px; }
 .home .observatory-id p { display: none; }
 .home .workbench {
-  left: 0;
-  bottom: 0;
-  width: 38%;
+  left: 2%;
+  bottom: 5%;
+  width: 35%;
 }
 .home .workbench::before {
   right: 22%;
@@ -1820,15 +1820,15 @@ body.terminal-open { overflow: hidden; }
   height: 18%;
 }
 .home .telescope {
-  left: 42%;
-  bottom: 12%;
-  width: 13%;
+  left: 40.5%;
+  bottom: 14%;
+  width: 15%;
   z-index: 15;
 }
 .home .archive {
-  right: 14.5%;
-  bottom: 7%;
-  width: 10.5%;
+  right: 14%;
+  bottom: 10%;
+  width: 12%;
 }
 .home .door {
   right: 1.3%;
@@ -1839,9 +1839,9 @@ body.terminal-open { overflow: hidden; }
 .home .keeper {
   position: absolute;
   z-index: 12;
-  left: 51%;
-  bottom: 2%;
-  width: 24%;
+  left: 52%;
+  bottom: 5%;
+  width: 22.5%;
   aspect-ratio: .563;
   pointer-events: none;
 }
@@ -1917,12 +1917,12 @@ body.terminal-open { overflow: hidden; }
 .projects-page .projects-atmosphere {
   position: absolute;
   z-index: 0;
-  inset: -115px 10% 0 auto;
-  width: 43%;
+  inset: -115px 4% 0 auto;
+  width: 48%;
   height: auto;
   min-height: 0;
   overflow: hidden;
-  opacity: .25;
+  opacity: .42;
   mask-image:
     linear-gradient(90deg, transparent 0, #000 30% 71%, transparent 100%),
     linear-gradient(0deg, transparent 0, #000 19% 77%, transparent 100%);
@@ -1935,7 +1935,7 @@ body.terminal-open { overflow: hidden; }
   min-height: 0;
   object-fit: cover;
   object-position: 50% 30%;
-  filter: brightness(.66) saturate(.6) contrast(1.07);
+  filter: brightness(.8) saturate(.66) contrast(1.08);
 }
 .projects-page .project-list {
   position: relative;
@@ -1946,7 +1946,7 @@ body.terminal-open { overflow: hidden; }
   background: none;
 }
 .projects-page .project-record {
-  grid-template-columns: 108px minmax(0, 1fr) 132px;
+  grid-template-columns: minmax(0, 1fr) 132px;
   gap: 20px;
   min-height: 134px;
   padding: 12px 16px 12px 10px;
@@ -2014,7 +2014,7 @@ body.terminal-open { overflow: hidden; }
     opacity: .16;
   }
   .projects-page .project-record {
-    grid-template-columns: 82px minmax(0, 1fr) 105px;
+    grid-template-columns: minmax(0, 1fr) 105px;
     min-height: 120px;
     gap: 13px;
     padding: 10px;
@@ -2036,9 +2036,9 @@ body.terminal-open { overflow: hidden; }
     width: 160%;
     left: -30%;
   }
-  .home .workbench { left: -16%; width: 63%; }
-  .home .telescope { left: 35%; bottom: 14%; width: 24%; }
-  .home .keeper { left: 53%; width: 36%; }
+  .home .workbench { display: none; }
+  .home .telescope { left: 27%; bottom: 20%; width: 30%; }
+  .home .keeper { left: 52%; bottom: 7%; width: 34%; }
   .home .archive,
   .home .door { display: none; }
   .projects-page .projects-shell { padding: 8px; }
@@ -2064,7 +2064,7 @@ body.terminal-open { overflow: hidden; }
     opacity: .11;
   }
   .projects-page .project-record {
-    grid-template-columns: 58px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 10px;
     min-height: 0;
     padding: 10px;
@@ -2081,7 +2081,7 @@ body.terminal-open { overflow: hidden; }
   .projects-page .project-tags { gap: 4px; }
   .projects-page .project-tags li { padding: 2px 5px; font-size: 7px; }
   .projects-page .project-link {
-    grid-column: 2;
+    grid-column: 1;
     justify-self: end;
     min-height: 24px;
     padding: 5px 0 0;
