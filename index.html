@@ -7,9 +7,9 @@
   <meta name="description" content="James Bregenzer's observatory: projects, signals, activity, notes, and unfinished experiments.">
   <title>james.bregenzer.dev — the observatory</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/styles.css?v=jb3">
-  <script src="/assets/script.js?v=jb3" defer></script>
-  <script src="/assets/navigation.js?v=jb3" defer></script>
+  <link rel="stylesheet" href="/assets/styles.css?v=jb4">
+  <script src="/assets/script.js?v=jb4" defer></script>
+  <script src="/assets/navigation.js?v=jb4" defer></script>
 </head>
 <body class="home">
   <a class="skip-link" href="#main">skip to observatory</a>
@@ -39,14 +39,16 @@
         <a class="scene-object terminal-link" href="/logbook/" data-object="terminal" aria-label="Logbook — Recent activity">
           <span class="object-label"><b>logbook</b><small>Recent activity</small></span>
         </a>
-        <a class="scene-object archive" href="/archive/" data-object="archive" aria-label="Archive — Notes and history">
-          <img src="/assets/img/archive-phase32.png" alt="">
-          <span class="object-label"><b>archive</b><small>Notes &amp; history</small></span>
-        </a>
-        <a class="scene-object door" href="/experiments/" data-object="door" aria-label="Experiments — Unfinished things">
-          <img src="/assets/img/door-phase32.png" alt="">
-          <span class="object-label"><b>experiments</b><small>Unfinished things</small></span>
-        </a>
+        <div class="right-wall-group" aria-label="Right wall archive and experiments">
+          <a class="scene-object archive" href="/archive/" data-object="archive" aria-label="Archive — Notes and history">
+            <img src="/assets/img/archive-phase32.png" alt="">
+            <span class="object-label"><b>archive</b><small>Notes &amp; history</small></span>
+          </a>
+          <a class="scene-object door" href="/experiments/" data-object="door" aria-label="Experiments — Unfinished things">
+            <img src="/assets/img/door-phase32.png" alt="">
+            <span class="object-label"><b>experiments</b><small>Unfinished things</small></span>
+          </a>
+        </div>
       </nav>
 
       <div class="keeper" aria-label="The ancient Keeper watches over the observatory">
