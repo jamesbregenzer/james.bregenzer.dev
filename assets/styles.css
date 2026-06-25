@@ -145,7 +145,7 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
   animation: online 4.5s ease-in-out infinite;
 }
 
-.scene-navigation { position: absolute; inset: 0; z-index: 10; }
+.scene-navigation { position: absolute; inset: 0; z-index: 14; }
 .scene-object {
   position: absolute;
   display: block;
@@ -173,7 +173,7 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
 }
 .scene-object:hover,
 .scene-object:focus-visible {
-  z-index: 16;
+  z-index: 30;
   cursor: pointer;
   outline: 0;
 }
@@ -196,7 +196,7 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
 
 .object-label {
   position: absolute;
-  z-index: 20;
+  z-index: 40;
   min-width: 140px;
   padding: 7px 9px 6px;
   opacity: 0;
@@ -858,6 +858,29 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
   .projects-atmosphere { width: 230px; }
 }
 
+
+@media (max-width: 1050px) and (min-width: 901px) {
+  .terminal-link,
+  .workbench,
+  .archive,
+  .door {
+    display: none;
+  }
+  .scene-object { pointer-events: none; }
+  .object-label { display: none; }
+  .telescope {
+    left: 44%;
+    bottom: 20%;
+    width: 13.5%;
+    z-index: 13;
+  }
+  .whisperer {
+    right: 25%;
+    bottom: 4%;
+    width: 15.5%;
+  }
+}
+
 @media (max-width: 900px) {
   body::after { opacity: .035; }
   .observatory-scene {
@@ -870,7 +893,10 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
   .observatory-id a { font-size: 11px; }
   .observatory-id p { font-size: 7px; }
   .scene-object { pointer-events: none; }
-  .terminal-link { display: none; }
+  .terminal-link,
+  .workbench,
+  .archive,
+  .door { display: none; }
   .object-label { display: none; }
   .telescope {
     left: 41%;
@@ -878,14 +904,6 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
     width: 15%;
     z-index: 13;
   }
-  .workbench {
-    left: -2%;
-    bottom: -1%;
-    width: 42%;
-  }
-  .archive { right: 10%; bottom: 6%; top: auto; width: 13%; }
-  .door { right: 0; top: 15%; bottom: auto; width: 12%; height: 72%; }
-  .door img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
   .whisperer { right: 25%; bottom: 0; width: 16.25%; }
   .mobile-navigation {
     display: grid;
@@ -1298,6 +1316,29 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
   text-transform: uppercase;
 }
 
+
+@media (max-width: 1050px) and (min-width: 901px) {
+  .terminal-link,
+  .workbench,
+  .archive,
+  .door {
+    display: none;
+  }
+  .scene-object { pointer-events: none; }
+  .object-label { display: none; }
+  .telescope {
+    left: 44%;
+    bottom: 20%;
+    width: 13.5%;
+    z-index: 13;
+  }
+  .whisperer {
+    right: 25%;
+    bottom: 4%;
+    width: 15.5%;
+  }
+}
+
 @media (max-width: 900px) {
   .projects-shell { padding: 8px; }
   .projects-frame { border-radius: 12px; }
@@ -1565,6 +1606,29 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
 .footer-protocol {
   border-top-color: rgba(119, 151, 87, .25);
   color: #638455;
+}
+
+
+@media (max-width: 1050px) and (min-width: 901px) {
+  .terminal-link,
+  .workbench,
+  .archive,
+  .door {
+    display: none;
+  }
+  .scene-object { pointer-events: none; }
+  .object-label { display: none; }
+  .telescope {
+    left: 44%;
+    bottom: 20%;
+    width: 13.5%;
+    z-index: 13;
+  }
+  .whisperer {
+    right: 25%;
+    bottom: 4%;
+    width: 15.5%;
+  }
 }
 
 @media (max-width: 900px) {
@@ -2004,6 +2068,29 @@ body.terminal-open { overflow: hidden; }
   border: 0;
 }
 
+
+@media (max-width: 1050px) and (min-width: 901px) {
+  .terminal-link,
+  .workbench,
+  .archive,
+  .door {
+    display: none;
+  }
+  .scene-object { pointer-events: none; }
+  .object-label { display: none; }
+  .telescope {
+    left: 44%;
+    bottom: 20%;
+    width: 13.5%;
+    z-index: 13;
+  }
+  .whisperer {
+    right: 25%;
+    bottom: 4%;
+    width: 15.5%;
+  }
+}
+
 @media (max-width: 900px) {
   .terminal-toggle { top: 15px; right: 15px; }
   .terminal-panel {
@@ -2144,6 +2231,29 @@ body.terminal-open { overflow: hidden; }
   top: 13%;
   width: 10.6%;
   height: 68%;
+}
+
+
+@media (max-width: 1050px) and (min-width: 901px) {
+  .terminal-link,
+  .workbench,
+  .archive,
+  .door {
+    display: none;
+  }
+  .scene-object { pointer-events: none; }
+  .object-label { display: none; }
+  .telescope {
+    left: 44%;
+    bottom: 20%;
+    width: 13.5%;
+    z-index: 13;
+  }
+  .whisperer {
+    right: 25%;
+    bottom: 4%;
+    width: 15.5%;
+  }
 }
 
 @media (max-width: 900px) {
