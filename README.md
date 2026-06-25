@@ -1,121 +1,249 @@
 # james.bregenzer.dev
 
-An atmospheric, layered internet observatory for James Bregenzer.
+<p align="center">
+  <img src="assets/img/banner.svg" alt="The Observatory" width="100%">
+</p>
 
-The site is intentionally dependency-free. The homepage uses a clean empty-room
-background plus separate transparent assets for every interactive object and
-the standing Keeper. Smoke, weather, lantern light, and terminal activity are
-generated as separate HTML/CSS effect layers. Object labels are discovered on
-hover or keyboard focus on desktop.
+<p align="center">
 
-Foreground artwork is stored as high-resolution transparent PNG layers under
-`assets/img/`; the room uses an optimized WebP layer. The room and objects
-remain fixed while only restrained ambient effects animate.
+  <img src="https://img.shields.io/badge/Cloudflare_Pages-Deployed-F38020?logo=cloudflare&logoColor=white" alt="Cloudflare Pages">
 
-All pages use the same hamburger-triggered terminal navigation. The homepage is
-a full-screen observatory without footer navigation. Interior pages use the
-same palette, menu, and breadcrumb system. Projects renders archive-style
-records from local structured content without a framework or build step.
+  <img src="https://img.shields.io/badge/Vanilla-JavaScript-F7DF1E?logo=javascript&logoColor=black" alt="Vanilla JavaScript">
 
-## Observatory design system
+  <img src="https://img.shields.io/badge/No-Build_Step-2E8B57" alt="No Build Step">
 
-The visual language is a research station rather than a conventional portfolio
-or product interface. Near-black surfaces, low-contrast engraved artwork,
-observatory green type, tarnished amber highlights, thin rules, scanlines, and
-monospaced typography establish the shared system. Content should feel found
-inside a working observatory: purposeful, compact, atmospheric, and legible.
+  <img src="https://img.shields.io/badge/Responsive-Desktop_%2B_Mobile-3B82F6" alt="Responsive">
 
-Avoid generic card grids, bright marketing sections, large rounded containers,
-dashboard controls, screenshots used as decoration, and ornamental elements
-that do not support the research-station metaphor. The shared color tokens and
-base typography live at the top of `assets/styles.css`.
+  <img src="https://img.shields.io/badge/Accessibility-WCAG_Focused-5B21B6" alt="Accessibility">
 
-## Interior page architecture
+  <img src="https://img.shields.io/badge/License-MIT-111111" alt="MIT License">
 
-Interior pages use `body.interior`, an `.interior-shell`, and the shared
-`assets/navigation.js` terminal menu. Each page supplies one focused content
-composition inside the shell. The Projects implementation uses:
+</p>
 
-1. `.projects-frame` for the bordered observatory surface.
-2. `.projects-intro` for breadcrumbs, title, telemetry, subtitle, and header art.
-3. `.projects-workspace` for the atmospheric artwork and record list.
-4. `.project-list` for text-first, data-rendered archive entries.
+An atmospheric personal site and portfolio presented as a small internet observatory.
 
-The Keeper artwork is decorative and faded behind the records. Mobile reduces
-its visual weight so it does not push project content down.
+The site is intentionally static, lightweight, and dependency-free. The homepage
+is a layered observatory scene with separate foreground objects for the desk,
+telescope, archive cabinet, experiments door, and the standing Keeper. The
+objects function as spatial navigation on desktop, while the hamburger-triggered
+terminal menu provides the primary navigation system across all pages.
 
-## Project record architecture
+The site is not a conventional portfolio template. It is intentionally closer to a 
+small interactive art project that happens to contain a portfolio, project records,
+notes, experiments, and future activity feeds.
 
-Projects are archive records, not cards. `assets/projects.js` reads
-`content/projects/projects.json` and renders one `.project-record` per project
-with a title, compact status, description, technology tags, and a right-aligned
-external action. Project-list icons, screenshots, and preview thumbnails are
-intentionally excluded.
+## Current site structure
 
-Supported status treatments are Active, Maintained, and In Progress.
+- `/` — atmospheric observatory homepage.
+- `/projects/` — archive-style records for selected projects.
+- `/observations/` — placeholder interior page for future signals, activity, or contribution feeds.
+- `/logbook/` — placeholder interior page for future notes or recent activity.
+- `/archive/` — placeholder interior page for older notes, references, or saved material.
+- `/experiments/` — placeholder interior page for prototypes, side projects, and unfinished ideas.
 
-## Navigation conventions
+The homepage navigation objects map to those sections:
 
-Every page loads `assets/navigation.js`. It injects one keyboard-accessible
-hamburger and terminal panel containing Observations, Projects, Logbook,
-Archive, and Experiments. Escape and outside clicks close the panel, focus is
-trapped while open, and body scrolling is locked. Do not add page-level footer
-navigation or duplicate menu markup.
+- Telescope → Observations
+- Desk / workstation → Projects
+- Terminal hotspot → Logbook
+- Archive cabinet → Archive
+- Door → Experiments
 
-## Artwork usage
+The hamburger menu contains the same navigation destinations and is used
+site-wide.
 
-Page artwork lives in `assets/img/`. Interior artwork should be dark at its
-outer edges so it can be blended with masks and gradients rather than presented
-as a standalone rectangle. Artwork is decorative unless it communicates unique
-content, in which case provide meaningful alternative text. Keep visual effects
-subtle and honor `prefers-reduced-motion`.
+## Design direction
 
-The homepage uses `room-background-phase5.webp`, an empty architectural layer
-with a plain right wall, plus separate desk, telescope, archive, door, and
-`keeper-standing-phase5.webp` foreground layers. The Projects page uses
-`projects-researcher.webp` as faded decorative context and
-`projects-observatory.webp` in the header.
+The visual system is a gothic observatory / terminal interface, not a normal
+marketing website. The goal is to feel memorable, mysterious, polished, and
+surprisingly functional.
 
-## Breadcrumb standards
+The shared design language uses:
 
-Breadcrumbs appear first on every interior page. Use small uppercase text,
-muted observatory green, and the single `›` separator with consistent spacing.
-Include the current page as the final segment with `aria-current="page"`.
+- near-black surfaces
+- observatory green terminal text
+- muted gold and amber highlights
+- thin borders and small labels
+- subtle scanline texture
+- restrained atmospheric motion
+- monospaced typography
+- layered transparent artwork
+- dark fantasy / research station cues
 
-The Projects page uses: `OBSERVATORY › WORKBENCH`
+This site purposefully avoids generic portfolio cards, bright marketing sections, dashboard UI,
+unnecessary screenshots, heavy rounded containers, and decorative elements that
+do not support the observatory metaphor.
+
+The shared color tokens and base typography live near the top of
+`assets/styles.css`.
+
+## Homepage architecture
+
+The homepage is a single observatory scene.
+
+Core elements:
+
+- `room.webp` — empty architectural room background.
+- `workstation.png` — desk/workstation foreground object.
+- `telescope.png` — telescope foreground object.
+- `archive.png` — archive cabinet foreground object.
+- `door.png` — experiments door foreground object.
+- `keeper-standing-phase5.webp` — standing Keeper foreground artwork.
+
+The homepage intentionally has no footer navigation. It uses:
+
+- text-only `james.bregenzer.dev` identity in the upper-left corner
+- hamburger menu in the upper-right corner
+- object-based scene navigation on desktop
+- simplified scene behavior at narrower widths
+
+The Keeper is decorative and non-interactive. The telescope, desk, archive
+cabinet, door, and terminal hotspot are the interactive desktop navigation
+targets.
+
+At compact widths, some foreground objects are intentionally hidden so the room
+simplifies to the Keeper and telescope instead of trying to preserve every
+desktop object in a crowded viewport.
+
+## Navigation
+
+Every page loads `assets/navigation.js`.
+
+The script injects a keyboard-accessible hamburger button and a terminal-style
+menu panel containing:
+
+- Observations
+- Projects
+- Logbook
+- Archive
+- Experiments
+
+Navigation behavior:
+
+- Escape closes the menu.
+- Outside click closes the menu.
+- Focus is managed while the menu is open.
+- Body scrolling is locked while the menu is open.
+- The same menu is used on homepage and interior pages.
+
+Do not add duplicate footer navigation or separate page-level nav systems.
+
+## Interior pages
+
+Interior pages use the shared `body.interior` layout and terminal menu.
+
+Current interior pages are intentionally simple shells, with Projects being the
+most developed page. The other sections can be expanded later without changing
+the global navigation system.
+
+Interior pages should remain:
+
+- readable
+- useful
+- atmospheric
+- connected to the observatory
+- more content-focused than the homepage
+
+The interior-page system should not become a generic dashboard, blog template,
+or marketing landing page.
+
+## Projects page
+
+The Projects page renders archive-style project records from local structured
+data.
+
+The current implementation uses:
+
+- `assets/projects.js`
+- `content/projects/projects.json`
+- optional markdown source files in `content/projects/`
+
+Project records are not screenshot cards and do not currently have individual
+project detail pages. Each record should link directly to an external project,
+tool, repository, or live site.
+
+The old `/projects/{slug}/` detail-page approach has been intentionally removed
+to reduce maintenance overhead.
 
 ## Project data workflow
 
-The project list is intentionally data-driven and build-free:
+To add or update projects:
 
 1. Edit `content/projects/projects.json`.
-2. Set `title`, `slug`, `status`, `order`, `description`, `tags`, and `icon`.
-3. Set `url` or `repo` to the external destination used by Open Project.
-4. Add or update the matching markdown source under `content/projects/` when a
-   longer project record exists.
-5. Preview at desktop and mobile widths before publishing.
+2. Add or update:
+   - `title`
+   - `slug`
+   - `status`
+   - `order`
+   - `description`
+   - `tags`
+   - `icon`
+   - `url` or `repo`
+3. Add or update a matching markdown file in `content/projects/` only if useful
+   for future reference.
+4. Preview `/projects/` locally.
+5. Confirm the project record links directly to the intended external
+   destination.
 
-## Adding a project
+The JSON file is the current source used by the browser-rendered project list.
+Markdown files are supporting source/reference material, not active detail-page
+routes.
 
-Project metadata lives in `content/projects/projects.json`. Add a new object
-with these required fields:
+Supported status treatments may include:
 
-- `title`
-- `slug`
-- `status`
-- `order`
-- `description`
-- `tags`
-- `icon`
-- `url` or `repo`
+- Active
+- Maintained
+- In Progress
+- Experimental
+- Archived
 
-Create a matching markdown file at `content/projects/{slug}.md` using the same
-frontmatter. The markdown files are the future source for longer project
-details, while the JSON file provides no-build listing data to the browser.
+## Project record conventions
 
-Project records should link directly to the live tool, project homepage, or
-repository. The current static architecture intentionally avoids runtime
-markdown parsing and keeps Cloudflare Pages deployment build-free.
+Projects should read like concise archive records.
+
+Each project should include:
+
+- clear title
+- short status
+- practical description
+- relevant technology tags
+- one direct action link
+
+Do not add screenshots or preview thumbnails unless the Projects page is
+intentionally redesigned later.
+
+## Artwork usage
+
+Artwork lives in `assets/img/`.
+
+Guidelines:
+
+- Keep homepage objects as separate transparent foreground assets.
+- Keep the room background as architecture only.
+- Avoid baking duplicate furniture, doors, cabinets, or interactive objects into
+  the background.
+- Use decorative artwork sparingly on interior pages.
+- Fade decorative interior artwork into the background instead of presenting it
+  as a hard rectangular image.
+- Provide meaningful alt text only when the artwork communicates content.
+- Honor `prefers-reduced-motion`.
+
+## Breadcrumb standards
+
+Breadcrumbs appear first on interior pages.
+
+Use:
+
+- small uppercase text
+- muted observatory green
+- the `›` separator
+- `aria-current="page"` for the current page
+
+Example:
+
+```text
+OBSERVATORY › PROJECTS
+```
 
 ## Local preview
 
@@ -125,7 +253,11 @@ From the repository root:
 python3 -m http.server 8080
 ```
 
-Then open `http://localhost:8080`.
+Then open:
+
+```text
+http://localhost:8080
+```
 
 ## Deployment
 
@@ -133,3 +265,24 @@ Then open `http://localhost:8080`.
 - Build command: none
 - Output directory: `/`
 - Production branch: `main`
+
+The site should remain build-free unless there is a strong reason to introduce a
+build step later.
+
+## Maintenance notes
+
+When making homepage scene changes:
+
+- Avoid broad redesigns once object placement is approved.
+- Prefer small CSS-only adjustments where possible.
+- Test desktop, narrow desktop, tablet, and mobile widths.
+- Confirm hover labels appear above foreground artwork.
+- Confirm the compact scene hides crowded objects as intended.
+- Clear cache or bump query strings when needed during deployment testing.
+
+When making Projects changes:
+
+- Update `content/projects/projects.json`.
+- Keep project records external-link focused.
+- Do not recreate individual project detail folders unless the architecture is
+  intentionally changed.
