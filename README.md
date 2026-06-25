@@ -1,7 +1,7 @@
 # james.bregenzer.dev
 
 <p align="center">
-  <img src="assets/img/banner.svg" alt="The Observatory" width="100%">
+  <img src="assets/img/banner.png" alt="The Observatory" width="100%">
 </p>
 
 <p align="center">
