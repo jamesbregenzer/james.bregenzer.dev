@@ -345,7 +345,7 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
 .door {
   right: 1%;
   top: auto;
-  bottom: 18.5%;
+  bottom: 6.5%;
   width: 11.8%;
   height: auto;
 }
