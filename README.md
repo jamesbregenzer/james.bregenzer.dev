@@ -16,8 +16,6 @@
 
   <img src="https://img.shields.io/badge/Accessibility-WCAG_Focused-5B21B6" alt="Accessibility">
 
-  <img src="https://img.shields.io/badge/License-MIT-111111" alt="MIT License">
-
 </p>
 
 An atmospheric personal site and portfolio presented as a small internet observatory.
