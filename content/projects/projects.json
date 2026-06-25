@@ -6,7 +6,12 @@
     "status": "Active",
     "order": 10,
     "description": "Automated discovery and scoring of WordPress Core contribution opportunities.",
-    "tags": ["Python", "GitHub Actions", "Cloudflare", "WordPress"],
+    "tags": [
+      "Python",
+      "GitHub Actions",
+      "Cloudflare",
+      "WordPress"
+    ],
     "icon": "radar",
     "featured": true
   },
@@ -17,8 +22,29 @@
     "status": "Active",
     "order": 20,
     "description": "Free, instant website audits covering performance, security, SEO, accessibility, and infrastructure.",
-    "tags": ["JavaScript", "Cloudflare", "SEO", "WordPress"],
+    "tags": [
+      "JavaScript",
+      "Cloudflare",
+      "SEO",
+      "WordPress"
+    ],
     "icon": "audit",
+    "featured": true
+  },
+  {
+    "title": "PageReview",
+    "slug": "pagereview",
+    "url": "https://pagereview.app/",
+    "status": "Active",
+    "order": 25,
+    "description": "A private design review app for sharing website concepts with clean links, protected projects, and focused client review flows.",
+    "tags": [
+      "Cloudflare Pages",
+      "D1",
+      "R2",
+      "JavaScript"
+    ],
+    "icon": "review",
     "featured": true
   },
   {
@@ -28,7 +54,12 @@
     "status": "Maintained",
     "order": 30,
     "description": "Local review aggregation and practical reputation insights for businesses.",
-    "tags": ["TypeScript", "Cloudflare", "PostgreSQL", "Maps API"],
+    "tags": [
+      "TypeScript",
+      "Cloudflare",
+      "PostgreSQL",
+      "Maps API"
+    ],
     "icon": "reviews",
     "featured": true
   }

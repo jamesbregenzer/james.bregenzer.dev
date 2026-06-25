@@ -4,7 +4,7 @@
 
   const statusClass = (status) => status.toLowerCase().replace(/\s+/g, "-");
 
-  fetch("/content/projects/projects.json")
+  fetch("/content/projects/projects.json?v=pagereview")
     .then((response) => {
       if (!response.ok) throw new Error("Project data unavailable");
       return response.json();

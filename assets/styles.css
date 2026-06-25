@@ -251,10 +251,10 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
   content: "";
   position: absolute;
   z-index: 3;
-  right: 7%;
-  top: 17%;
-  width: 13%;
-  height: 22%;
+  right: 27%;
+  top: 11%;
+  width: 8.5%;
+  height: 17%;
   border-radius: 50%;
   background: rgba(238, 165, 76, .2);
   filter: blur(17px);
@@ -265,10 +265,10 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
   content: "";
   position: absolute;
   z-index: 2;
-  left: 17%;
+  left: 50%;
   top: 8%;
-  width: 17%;
-  height: 25%;
+  width: 14%;
+  height: 18%;
   border-radius: 7%;
   background: rgba(96, 190, 74, .1);
   filter: blur(10px);
@@ -349,7 +349,11 @@ a:focus-visible { outline: 1px solid var(--green-bright); outline-offset: 4px; }
   width: 11%;
   height: 64%;
 }
-.door img { height: 100%; object-fit: fill; }
+.door img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 .door .object-label { right: 85%; top: 28%; }
 .door .object-label::after { left: 100%; top: 58%; width: 28px; }
 
@@ -1814,10 +1818,10 @@ body.terminal-open { overflow: hidden; }
   width: 35%;
 }
 .home .workbench::before {
-  right: 22%;
-  top: 9%;
-  width: 10%;
-  height: 18%;
+  right: 28%;
+  top: 12%;
+  width: 8.5%;
+  height: 17%;
 }
 .home .telescope {
   left: 40.5%;
@@ -1826,14 +1830,14 @@ body.terminal-open { overflow: hidden; }
   z-index: 15;
 }
 .home .archive {
-  right: 14%;
-  bottom: 10%;
-  width: 12%;
+  right: 17.2%;
+  bottom: 16%;
+  width: 9.8%;
 }
 .home .door {
-  right: 1.3%;
+  right: 1.2%;
   top: 13%;
-  width: 10.5%;
+  width: 16%;
   height: 67%;
 }
 .home .keeper {
