@@ -1,10 +1,9 @@
 (() => {
   const destinations = [
-    ["/observations/", "Observations"],
     ["/projects/", "Projects"],
-    ["/logbook/", "Logbook"],
-    ["/archive/", "Archive"],
     ["/experiments/", "Experiments"],
+    ["/observations/", "Observations"],
+    ["/logbook/", "Logbook"],
   ];
 
   const shell = document.createElement("div");

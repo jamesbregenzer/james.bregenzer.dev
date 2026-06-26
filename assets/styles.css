@@ -1960,3 +1960,75 @@ body.terminal-open { overflow: hidden; }
     object-fit: contain;
   }
 }
+
+/* Interior content pass: shared metadata + larger archive records */
+.last-updated {
+  position: relative;
+  z-index: 2;
+  margin: 8px 0 0;
+  color: #89b970;
+  font-size: 10px;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+.page-copy + .last-updated {
+  margin-top: 14px;
+}
+.projects-intro > .last-updated {
+  margin-top: 9px;
+  color: #85b96d;
+  font-size: 10px;
+}
+.projects-page .project-record-body > p {
+  font-size: 12px;
+  line-height: 1.62;
+}
+.projects-page .project-tags li,
+.projects-page .project-status {
+  font-size: 9px;
+}
+.projects-page .project-link {
+  font-size: 10px;
+  letter-spacing: .035em;
+}
+.experiments-page {
+  background:
+    radial-gradient(ellipse at 72% 8%, rgba(60, 87, 52, .1), transparent 34%),
+    #020403;
+}
+.experiments-page .projects-frame {
+  background:
+    linear-gradient(rgba(3, 7, 5, .79), rgba(2, 5, 4, .94)),
+    url("/assets/img/room.webp") center / cover no-repeat;
+}
+.experiments-page .projects-atmosphere img {
+  object-position: 54% 50%;
+}
+.experiments-page .status-prototype {
+  color: #d4a04f;
+  border-color: rgba(212, 160, 79, .6);
+}
+.experiments-page .status-research {
+  color: #8bc2b2;
+  border-color: rgba(95, 157, 142, .6);
+}
+.experiments-page .status-exploring {
+  color: #b6c48d;
+  border-color: rgba(160, 178, 111, .55);
+}
+
+@media (max-width: 900px) {
+  .projects-intro > .last-updated { font-size: 9px; }
+  .projects-page .project-record-body > p { font-size: 11px; }
+  .projects-page .project-tags li,
+  .projects-page .project-status { font-size: 8px; }
+  .projects-page .project-link { font-size: 9px; }
+}
+
+@media (max-width: 600px) {
+  .last-updated { font-size: 8px; }
+  .projects-page .project-record-body > p { font-size: 10px; }
+  .projects-page .project-tags li,
+  .projects-page .project-status { font-size: 7px; }
+  .projects-page .project-link { font-size: 8px; }
+}

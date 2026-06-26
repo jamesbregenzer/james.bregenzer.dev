@@ -4,19 +4,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#050806">
-  <meta name="description" content="Unfinished experiments beyond James Bregenzer's observatory door.">
+  <meta name="description" content="Experiments and prototypes from James Bregenzer's developer observatory.">
   <title>Experiments — james.bregenzer.dev</title>
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="/assets/styles.css?v=jb">
+  <script src="/assets/experiments.js?v=jb" defer></script>
+  <script src="/assets/records.js?v=jb" defer></script>
+  <script src="/assets/last-updated.js?v=jb" defer></script>
   <script src="/assets/navigation.js?v=jb" defer></script>
 </head>
-<body class="interior">
-  <main class="interior-shell">
-    <section class="interior-content">
-      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Observatory</a><span aria-hidden="true">›</span><span>Door</span></nav>
-      <h1>Experiments</h1>
-      <p class="page-copy">Unfinished tools, uncertain ideas, and strange side paths that may become something useful.</p>
-      <p class="page-note">The door opens, but not every path is stable.</p>
+<body class="interior projects-page experiments-page">
+  <a class="skip-link" href="#main">skip to experiments</a>
+  <main class="interior-shell projects-shell" id="main">
+    <section class="projects-frame">
+      <header class="projects-intro">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Observatory</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Experiments</span>
+        </nav>
+        <div class="projects-title-row">
+          <h1>Experiments</h1>
+          <svg class="title-signal" viewBox="0 0 245 30" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 16h55l7-1 5-11 7 25 8-25 7 20 8-12 8 4h140"></path>
+          </svg>
+        </div>
+        <p>Ideas under active investigation.</p>
+        <p class="last-updated" data-last-updated>LAST UPDATED: --</p>
+        <div class="projects-observatory" aria-hidden="true">
+          <img src="/assets/img/projects-observatory.webp" alt="">
+        </div>
+      </header>
+
+      <div class="projects-workspace">
+        <div class="projects-atmosphere" aria-hidden="true"><img src="/assets/img/experiments-lab.webp" alt=""></div>
+        <div class="project-list" data-experiment-list aria-live="polite">
+          <p class="project-loading">Loading experiment records…</p>
+        </div>
+      </div>
     </section>
   </main>
 </body>
